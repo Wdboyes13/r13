@@ -16,7 +16,7 @@ add_subdirectory(assets)
 add_subdirectory(tests)
 add_subdirectory(lib)
 
-file(GLOB LIB_SOURCES "src/*.cc")
+file(GLOB LIB_SOURCES CONFIGURE_DEPENDS "src/*.cc")
 
 add_library(
     ${CMAKE_PROJECT_NAME}
@@ -33,4 +33,7 @@ target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE GLFW_INCLUDE_NONE)
 
 include(generate_package)
 
-install(DIRECTORY include/ DESTINATION include/r13)
+file(GLOB PRIV_INCLUDES CONFIGURE_DEPENDS "include/r13priv/*")
+
+install(FILES include/r13.h DESTINATION include/r13)
+install(DIRECTORY include/r13priv DESTINATION include/r13)
