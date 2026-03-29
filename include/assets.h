@@ -13,6 +13,6 @@ DECLARE_ASSET(rect_vert)
 DECLARE_ASSET(text_frag)
 DECLARE_ASSET(text_vert)
 
-DECLARE_ASSET(unifont_ttf)
+DECLARE_ASSET(vt323_ttf)
 
 #undef DECLARE_ASSET

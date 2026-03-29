@@ -1,12 +1,11 @@
 #include <assets.h>
-#include <renderer.h>
+#include <r13.h>
 
-#include <freetype/freetype.h>
 #include <glad/gl.h>
+#include <stb_truetype.h>
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
-#include <iostream>
 #include <memory>
 #include <stdexcept>
 #include <utility>
@@ -53,7 +52,6 @@ void TextRND::render(std::string text, Vec2 pos, float scale, Color color) {
 
         float w = ch.size.x * scale;
         float h = ch.size.y * scale;
-        // update vbo for each character
         float vertices[6][4] = {
             { xpos, ypos + h, 0.0f, 0.0f },
             { xpos, ypos, 0.0f, 1.0f },
@@ -63,9 +61,7 @@ void TextRND::render(std::string text, Vec2 pos, float scale, Color color) {
             { xpos + w, ypos, 1.0f, 1.0f },
             { xpos + w, ypos + h, 1.0f, 0.0f }
         };
-        // render glyph texture over quad
         glBindTexture(GL_TEXTURE_2D, ch.texture_id);
-        // update content of vbo memory
         glBindBuffer(GL_ARRAY_BUFFER, vbo);
         glBufferSubData(GL_ARRAY_BUFFER, 0, sizeof(vertices), vertices);
 
@@ -110,58 +106,59 @@ TextRND::~TextRND() {
 }
 
 void TextRND::init_font() {
-    FT_Library ft;
-    if (FT_Init_FreeType(&ft)) {
-        throw std::runtime_error("Could not init FreeType Library");
+    const int font_size = 48;
+    stbtt_fontinfo finfo;
+    if (!stbtt_InitFont(&finfo, vt323_ttf, 0)) {
+        throw std::runtime_error("Could not init stbtt font");
     }
 
-    FT_Face face;
-    if (FT_New_Memory_Face(ft, unifont_ttf, unifont_ttf_len, 0, &face)) {
-        throw std::runtime_error("Failed to load font");
-    } else {
-        // set size to load glyphs as
-        FT_Set_Pixel_Sizes(face, 0, 48);
+    float scale = stbtt_ScaleForPixelHeight(&finfo, font_size);
+    glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
 
-        // disable byte-alignment restriction
-        glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
+    for (unsigned char c = 0; c < 128; c++) {
+        int adv, lsb;
+        stbtt_GetCodepointHMetrics(&finfo, c, &adv, &lsb);
 
-        // load first 128 characters of ASCII set
-        for (unsigned char c = 0; c < 128; c++) {
-            if (FT_Load_Char(face, c, FT_LOAD_RENDER)) {
-                std::cout << "Failed to load Glyph" << std::endl;
-                continue;
-            }
+        int x0, y0, x1, y1;
+        stbtt_GetCodepointBitmapBox(&finfo, c, scale, scale, &x0, &y0, &x1, &y1);
 
-            unsigned int texture;
+        int w = x1 - x0;
+        int h = y1 - y0;
+
+        unsigned int texture = 0;
+
+        if (w > 0 && h > 0) {
+            std::vector<unsigned char> bitmap(w * h, 0);
+            stbtt_MakeCodepointBitmapSubpixel(
+                &finfo,
+                bitmap.data(),
+                w,
+                h,
+                w,
+                scale,
+                scale,
+                0,
+                0,
+                c);
+
             glGenTextures(1, &texture);
             glBindTexture(GL_TEXTURE_2D, texture);
-            glTexImage2D(
-                GL_TEXTURE_2D,
-                0,
-                GL_RED,
-                face->glyph->bitmap.width,
-                face->glyph->bitmap.rows,
-                0,
-                GL_RED,
-                GL_UNSIGNED_BYTE,
-                face->glyph->bitmap.buffer);
-            // set texture options
+            glTexImage2D(GL_TEXTURE_2D, 0, GL_RED, w, h, 0, GL_RED, GL_UNSIGNED_BYTE, bitmap.data());
             glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
             glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
-            glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-            glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-
-            Character character = {
-                texture,
-                glm::ivec2(face->glyph->bitmap.width, face->glyph->bitmap.rows),
-                glm::ivec2(face->glyph->bitmap_left, face->glyph->bitmap_top),
-                (unsigned int)face->glyph->advance.x
-            };
-            characters.insert(std::pair<char, Character>(c, character));
+            glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+            glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+            glBindTexture(GL_TEXTURE_2D, 0);
         }
-        glBindTexture(GL_TEXTURE_2D, 0);
 
-        FT_Done_Face(face);
+        Character character = {
+            texture,
+            glm::ivec2(w, h),
+            glm::ivec2(x0, -y0),
+            (unsigned int)(adv * scale * 64)
+        };
+        characters.insert({ c, character });
     }
-    FT_Done_FreeType(ft);
+
+    glBindTexture(GL_TEXTURE_2D, 0);
 }
