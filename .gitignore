@@ -1,9 +1,2 @@
 *build*/
 .clangd
-
-lib/glfw-3.4/docs
-lib/glfw-3.4/examples
-lib/glfw-3.4/tests
-
-lib/glm/doc
-lib/glm/test
