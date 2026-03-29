@@ -29,7 +29,7 @@ target_include_directories(${CMAKE_PROJECT_NAME} PUBLIC
     $<INSTALL_INTERFACE:include/r13>
 )
 target_link_libraries(${CMAKE_PROJECT_NAME} PRIVATE assetlib stbtt glad glfw miniaudio glm-header-only)
-target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE GLFW_INCLUDE_NONE)
+target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE GLFW_INCLUDE_NONE DLL)
 
 include(generate_package)
 
