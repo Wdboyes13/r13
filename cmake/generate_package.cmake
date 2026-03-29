@@ -6,7 +6,7 @@ install(FILES ${CMAKE_CURRENT_BINARY_DIR}/r13.pc
 include(CMakePackageConfigHelpers)
 
 install(
-    TARGETS r13 r13_static miniaudio glm-header-only glfw assetlib stbtt glad
+    TARGETS r13
     EXPORT r13Targets
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}/r13
     ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}/r13

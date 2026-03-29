@@ -73,7 +73,7 @@ void TextRND::render(std::string text, Vec2 pos, float scale, Color color) {
     glBindTexture(GL_TEXTURE_2D, 0);
 }
 
-glm::vec2 TextRND::measure(const std::string& text, float scale) {
+Vec2 TextRND::measure(const std::string& text, float scale) {
     float width = 0.0f;
     float height = 0.0f;
 
@@ -86,7 +86,7 @@ glm::vec2 TextRND::measure(const std::string& text, float scale) {
         }
     }
 
-    return glm::vec2(width, height);
+    return Vec2{ width, height };
 }
 
 TextRND::~TextRND() {
@@ -153,8 +153,8 @@ void TextRND::init_font() {
 
         Character character = {
             texture,
-            glm::ivec2(w, h),
-            glm::ivec2(x0, -y0),
+            IVec2{ w, h },
+            IVec2{ x0, -y0 },
             (unsigned int)(adv * scale * 64)
         };
         characters.insert({ c, character });

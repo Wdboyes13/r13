@@ -13,8 +13,8 @@ R13::~R13() {
     glfwTerminate();
 }
 
-glm::vec2 R13::get_dimensions() {
-    return glm::vec2(width, height);
+Vec2 R13::get_dimensions() {
+    return Vec2{ (float)width, (float)height };
 }
 
 void R13::fb_size_callback(GLFWwindow* window, int width, int height) {

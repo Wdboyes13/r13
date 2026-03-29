@@ -9,19 +9,19 @@ int main() {
     auto text_size = rnd->text->measure("test", 1);
 
     while (!rnd->should_close()) {
-        if (rnd->is_key_down(GLFW_KEY_W)) {
+        if (rnd->is_key_down(KEY_W)) {
             sqr.y++;
         }
 
-        if (rnd->is_key_down(GLFW_KEY_S)) {
+        if (rnd->is_key_down(KEY_S)) {
             sqr.y--;
         }
 
-        if (rnd->is_key_down(GLFW_KEY_A)) {
+        if (rnd->is_key_down(KEY_A)) {
             sqr.x--;
         }
 
-        if (rnd->is_key_down(GLFW_KEY_D)) {
+        if (rnd->is_key_down(KEY_D)) {
             sqr.x++;
         }
 

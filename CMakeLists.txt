@@ -24,23 +24,12 @@ add_library(
     ${LIB_SOURCES}
 )
 
-add_library(
-    ${CMAKE_PROJECT_NAME}_static
-    STATIC
-    ${LIB_SOURCES}
+target_include_directories(${CMAKE_PROJECT_NAME} PUBLIC
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+    $<INSTALL_INTERFACE:include/r13>
 )
-
-set(EXPORT_LIBS ${CMAKE_PROJECT_NAME} ${CMAKE_PROJECT_NAME}_static)
-
-foreach(lib IN LISTS EXPORT_LIBS)
-    target_include_directories(${lib} PUBLIC
-        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
-        $<INSTALL_INTERFACE:include/r13>
-    )
-    target_link_libraries(${lib} PUBLIC glfw miniaudio glm-header-only)
-    target_link_libraries(${lib} PRIVATE assetlib stbtt glad)
-    target_compile_definitions(${lib} PRIVATE GLFW_INCLUDE_NONE)
-endforeach()
+target_link_libraries(${CMAKE_PROJECT_NAME} PRIVATE assetlib stbtt glad glfw miniaudio glm-header-only)
+target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE GLFW_INCLUDE_NONE)
 
 include(generate_package)
 
