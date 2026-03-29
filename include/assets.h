@@ -1,4 +1,7 @@
 #pragma once
+#ifndef R13_PRIVATE_ACCESS
+#    error "This should NOT be included by files not part of R13"
+#endif
 
 #define DECLARE_ASSET(BUILD_ID)      \
     extern unsigned char BUILD_ID[]; \

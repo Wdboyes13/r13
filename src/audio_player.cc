@@ -1,5 +1,7 @@
+#define R13_PRIVATE_ACCESS
+
 #include <miniaudio.h>
-#include <r13.h>
+#include <r13priv/classes.h>
 
 bool AudioPlayer::load_file(const std::string& path) {
     ma_result result;

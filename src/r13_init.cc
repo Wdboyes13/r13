@@ -1,42 +1,17 @@
+#define R13_PRIVATE_ACCESS
+
 #include <r13.h>
+#include <r13priv/classes.h>
 
 #include <glad/gl.h>
 #include <GLFW/glfw3.h>
-#include <glm/glm.hpp>
 #include <stdexcept>
-#include <string>
 
-R13::R13(const std::string& _data_path, int width, int height)
-    : data_path(_data_path), width(width), height(height) { this->init(); }
+R13::R13(int width, int height, int font_sz)
+    : width(width), height(height), font_sz(font_sz) { this->init(); }
 
 R13::~R13() {
     glfwTerminate();
-}
-
-Vec2 R13::get_dimensions() {
-    return Vec2{ (float)width, (float)height };
-}
-
-void R13::fb_size_callback(GLFWwindow* window, int width, int height) {
-    glViewport(0, 0, width, height);
-}
-
-void R13::begin_draw(Color c) {
-    glClearColor(c.r, c.g, c.b, c.a);
-    glClear(GL_COLOR_BUFFER_BIT);
-}
-
-void R13::end_draw() {
-    glfwSwapBuffers(window);
-    glfwPollEvents();
-}
-
-bool R13::is_key_down(int k) {
-    return glfwGetKey(window, k) == GLFW_PRESS;
-}
-
-bool R13::should_close() {
-    return glfwWindowShouldClose(window);
 }
 
 void R13::init() {
@@ -67,11 +42,13 @@ void R13::init() {
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
-    rect = std::make_unique<SquareRND>();
-    text = std::make_unique<TextRND>();
+    rect = std::make_unique<RectRND>();
+    text = std::make_unique<TextRND>(font_sz);
     circle = std::make_unique<CircleRND>();
 
     rect->init(this);
     text->init(this);
     circle->init(this);
+
+    audio = std::make_unique<AudioPlayer>();
 }

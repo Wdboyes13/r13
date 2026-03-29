@@ -1,5 +1,8 @@
+#define R13_PRIVATE_ACCESS
+
 #include <assets.h>
 #include <r13.h>
+#include <r13priv/classes.h>
 
 #include <glad/gl.h>
 #include <stb_truetype.h>
@@ -7,8 +10,8 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 #include <memory>
-#include <stdexcept>
-#include <utility>
+
+TextRND::TextRND(int font_sz) : font_sz(font_sz) {}
 
 void TextRND::init(R13* _prend) {
     prend = _prend;
@@ -23,7 +26,7 @@ void TextRND::init(R13* _prend) {
     glm::mat4 projection = glm::ortho(0.0f, dimensions.x, 0.0f, dimensions.y);
     shader->use();
     glUniformMatrix4fv(glGetUniformLocation(shader->id, "projection"), 1, GL_FALSE, glm::value_ptr(projection));
-    init_font();
+    font = std::make_unique<Font>();
     glGenVertexArrays(1, &vao);
     glGenBuffers(1, &vbo);
     glBindVertexArray(vao);
@@ -35,7 +38,7 @@ void TextRND::init(R13* _prend) {
     glBindVertexArray(0);
 }
 
-void TextRND::render(std::string text, Vec2 pos, float scale, Color color) {
+void TextRND::render(std::string text, Vec2 pos, Color color, float scale) {
     // activate corresponding render state
     shader->use();
     shader->set_vec4("textColor", color);
@@ -45,7 +48,7 @@ void TextRND::render(std::string text, Vec2 pos, float scale, Color color) {
     // iterate through all characters
     std::string::const_iterator c;
     for (c = text.begin(); c != text.end(); c++) {
-        Character ch = characters[*c];
+        Font::Character ch = font->characters[*c];
 
         float xpos = pos.x + ch.bearing.x * scale;
         float ypos = pos.y - (ch.size.y - ch.bearing.y) * scale;
@@ -73,30 +76,7 @@ void TextRND::render(std::string text, Vec2 pos, float scale, Color color) {
     glBindTexture(GL_TEXTURE_2D, 0);
 }
 
-Vec2 TextRND::measure(const std::string& text, float scale) {
-    float width = 0.0f;
-    float height = 0.0f;
-
-    for (char c : text) {
-        Character ch = characters[c];
-        float h = ch.size.y * scale;
-        width += (ch.advance >> 6) * scale;
-        if (h > height) {
-            height = h;
-        }
-    }
-
-    return Vec2{ width, height };
-}
-
 TextRND::~TextRND() {
-    for (auto& [ch, character] : characters) {
-        if (character.texture_id) {
-            glDeleteTextures(1, &character.texture_id);
-            character.texture_id = 0;
-        }
-    }
-    characters.clear();
     if (vao) {
         glDeleteVertexArrays(1, &vao);
     }
@@ -105,60 +85,10 @@ TextRND::~TextRND() {
     }
 }
 
-void TextRND::init_font() {
-    const int font_size = 48;
-    stbtt_fontinfo finfo;
-    if (!stbtt_InitFont(&finfo, vt323_ttf, 0)) {
-        throw std::runtime_error("Could not init stbtt font");
-    }
+Vec2 TextRND::measure(const std::string& text, float scale) {
+    return font->measure(text, scale);
+}
 
-    float scale = stbtt_ScaleForPixelHeight(&finfo, font_size);
-    glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
-
-    for (unsigned char c = 0; c < 128; c++) {
-        int adv, lsb;
-        stbtt_GetCodepointHMetrics(&finfo, c, &adv, &lsb);
-
-        int x0, y0, x1, y1;
-        stbtt_GetCodepointBitmapBox(&finfo, c, scale, scale, &x0, &y0, &x1, &y1);
-
-        int w = x1 - x0;
-        int h = y1 - y0;
-
-        unsigned int texture = 0;
-
-        if (w > 0 && h > 0) {
-            std::vector<unsigned char> bitmap(w * h, 0);
-            stbtt_MakeCodepointBitmapSubpixel(
-                &finfo,
-                bitmap.data(),
-                w,
-                h,
-                w,
-                scale,
-                scale,
-                0,
-                0,
-                c);
-
-            glGenTextures(1, &texture);
-            glBindTexture(GL_TEXTURE_2D, texture);
-            glTexImage2D(GL_TEXTURE_2D, 0, GL_RED, w, h, 0, GL_RED, GL_UNSIGNED_BYTE, bitmap.data());
-            glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
-            glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
-            glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-            glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
-            glBindTexture(GL_TEXTURE_2D, 0);
-        }
-
-        Character character = {
-            texture,
-            IVec2{ w, h },
-            IVec2{ x0, -y0 },
-            (unsigned int)(adv * scale * 64)
-        };
-        characters.insert({ c, character });
-    }
-
-    glBindTexture(GL_TEXTURE_2D, 0);
+void TextRND::set_font(const Font& font) {
+    this->font = std::make_unique<Font>(font);
 }

@@ -1,4 +1,7 @@
+#define R13_PRIVATE_ACCESS
+
 #include <r13.h>
+#include <r13priv/classes.h>
 
 #include <glad/gl.h>
 #include <glm/glm.hpp>

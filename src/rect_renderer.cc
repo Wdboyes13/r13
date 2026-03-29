@@ -1,5 +1,8 @@
+#define R13_PRIVATE_ACCESS
+
 #include <assets.h>
 #include <r13.h>
+#include <r13priv/classes.h>
 
 #include <glad/gl.h>
 #include <glm/glm.hpp>
@@ -7,7 +10,7 @@
 #include <glm/gtc/type_ptr.hpp>
 #include <memory>
 
-void SquareRND::init(R13* _prend) {
+void RectRND::init(R13* _prend) {
     prend = _prend;
 
     auto dimensions = prend->get_dimensions();
@@ -33,7 +36,7 @@ void SquareRND::init(R13* _prend) {
     glBindVertexArray(0);
 }
 
-void SquareRND::render(Rectangle rect, Color color) {
+void RectRND::render(Rectangle rect, Color color) {
     shader->use();
     shader->set_vec4("color", color);
 
@@ -64,7 +67,7 @@ void SquareRND::render(Rectangle rect, Color color) {
     glBindVertexArray(0);
 }
 
-SquareRND::~SquareRND() {
+RectRND::~RectRND() {
     if (vao) {
         glDeleteVertexArrays(1, &vao);
     }

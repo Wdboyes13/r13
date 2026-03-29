@@ -1,3 +1,8 @@
+#pragma once
+#ifndef R13_PRIVATE_ACCESS
+#    error "This should NOT be included by files not part of R13"
+#endif
+
 struct Vec2 {
     float x, y;
 };
