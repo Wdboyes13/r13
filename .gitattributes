@@ -1,1 +1,2 @@
 *.cc linguist-language=C++
+lib/ linguist-vendored
