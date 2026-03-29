@@ -1,2 +1,0 @@
-subdir('glad')
-subdir('stbtt')

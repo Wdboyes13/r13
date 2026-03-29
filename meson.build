@@ -1,26 +1,26 @@
-project('r13_renderer', 'cpp', version: '0.1.0')
+project('r13', 'cpp', version: '0.1.0')
 
-bindump = files('scripts/bindump.py')
+cpp_compiler_id = meson.get_compiler('cpp').get_id()
 
+includes = []
+sources = []
+cpp_flags = []
+deps = [
+    dependency('glfw3'),
+    dependency('glm')
+]
+
+subdir('scripts')
 subdir('lib')
 subdir('assets')
+subdir('include')
+subdir('src')
 
-sources = [
-    'src/circ_rnd.cc',
-    'src/r13r.cc',
-    'src/shader.cc',
-    'src/square_rnd.cc',
-    'src/text_rnd.cc'
-]
-
-includes = include_directories('include')
-
-deps = [
-    glad, assets, stbtt,
-    dependency('glfw3'),
-    dependency('glm'),
-    dependency('freetype2')
-]
+if cpp_compiler_id == 'msvc'
+    cpp_flags += '/DGLFW_INCLUDE_NONE'
+else
+    cpp_flags += '-DGLFW_INCLUDE_NONE'
+endif
 
 shared = shared_library(
     meson.project_name(),
@@ -28,7 +28,7 @@ shared = shared_library(
     include_directories: includes,
     dependencies: deps,
     install: true,
-    cpp_args: ['-DGLFW_INCLUDE_NONE']
+    cpp_args: cpp_flags
 )
 
 static = static_library(
@@ -37,30 +37,8 @@ static = static_library(
     include_directories: includes,
     dependencies: deps,
     install: true,
-    cpp_args: ['-DGLFW_INCLUDE_NONE']
-)
-
-pkg = import('pkgconfig')
-
-pkg.generate(
-    shared,
-    name: shared.name(),
-    description: 'R13 OpenGL Game Library (shared library)',
-    version: meson.project_version()
-)
-
-pkg.generate(
-    static,
-    name: static.name(),
-    description: 'R13 OpenGL Game Library (static library)',
-    version: meson.project_version()
-)
-
-# this will just be used by tests
-r13_shared = declare_dependency(
-    link_with: shared,
-    include_directories: includes,
-    dependencies: [dependency('glfw3'), dependency('glm')]
+    cpp_args: cpp_flags
 )
 
 subdir('tests')
+subdir('pkg')

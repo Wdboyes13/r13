@@ -1,0 +1,12 @@
+set(GLFW_LIBRARY_TYPE STATIC)
+set(GLFW_BUILD_DOCS OFF CACHE BOOL "" FORCE)
+set(GLFW_BUILD_TESTS OFF CACHE BOOL "" FORCE)
+set(GLFW_BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)
+set(GLFW_INSTALL OFF CACHE BOOL "" FORCE)
+
+add_subdirectory(glm)
+add_subdirectory(glfw-3.4)
+
+add_subdirectory(glad)
+add_subdirectory(miniaudio)
+add_subdirectory(stbtt)

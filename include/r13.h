@@ -28,14 +28,17 @@ struct Rectangle {
     float x, y, height, width;
 };
 
+class AudioPlayer {
+};
+
 class SquareRND;
 class TextRND;
 class CircleRND;
 
-class R13Renderer {
+class R13 {
   public:
-    R13Renderer(const std::string& _data_path, int width, int height);
-    ~R13Renderer();
+    R13(const std::string& _data_path, int width, int height);
+    ~R13();
 
     glm::vec2 get_dimensions();
 
@@ -80,25 +83,25 @@ class Shader {
 
 class Renderer {
   public:
-    virtual void init(R13Renderer* _prend) = 0;
+    virtual void init(R13* _prend) = 0;
     virtual ~Renderer() = default;
 
   protected:
     unsigned int vao, vbo;
     std::unique_ptr<Shader> shader;
-    R13Renderer* prend;
+    R13* prend;
 };
 
 class SquareRND : public Renderer {
   public:
-    void init(R13Renderer* _prend) override;
+    void init(R13* _prend) override;
     void render(Rectangle rect, Color color);
     ~SquareRND() override;
 };
 
 class TextRND : public Renderer {
   public:
-    void init(R13Renderer* _prend) override;
+    void init(R13* _prend) override;
     void render(std::string text, Vec2 pos, float scale, Color color);
     glm::vec2 measure(const std::string& text, float scale);
     ~TextRND() override;
@@ -117,7 +120,7 @@ class TextRND : public Renderer {
 
 class CircleRND : public Renderer {
   public:
-    void init(R13Renderer* _prend) override;
+    void init(R13* _prend) override;
     void render(Vec2 center, float radius, Color color);
     ~CircleRND() override;
 };

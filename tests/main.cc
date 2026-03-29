@@ -1,7 +1,7 @@
 #include <r13.h>
 
 int main() {
-    auto rnd = new R13Renderer("../assets", 1280, 720);
+    auto rnd = new R13("../assets", 1280, 720);
     auto dms = rnd->get_dimensions();
 
     Rectangle sqr = { dms.x / 2, dms.y / 2, 25, 25 };

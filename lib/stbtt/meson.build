@@ -10,3 +10,5 @@ stbtt = declare_dependency(
     include_directories: include_directories('include'), 
     link_with: stbtt_lib
 )
+
+deps += stbtt
