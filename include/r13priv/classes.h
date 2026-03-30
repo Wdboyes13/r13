@@ -24,9 +24,9 @@ class Shader {
     ~Shader();
 
     void use();
-    void set_vec2(const char* name, Vec2 v);
-    void set_vec3(const char* name, Vec3 v);
-    void set_vec4(const char* name, Vec4 v);
+    void set_vec2(const char* name, Vec2<float> v);
+    void set_vec3(const char* name, Vec3<float> v);
+    void set_vec4(const char* name, Vec4<float> v);
     void set_float(const char* name, float v);
 };
 
@@ -52,9 +52,9 @@ class TextRND : public Renderer {
   public:
     TextRND(int font_sz);
     void init(R13* _prend) override;
-    void render(std::string text, Vec2 pos, Color color, float scale = 1);
+    void render(std::string text, Vec2<float> pos, Color color, float scale = 1);
 
-    Vec2 measure(const std::string& text, float scale = 1);
+    Vec2<float> measure(const std::string& text, float scale = 1);
     void set_font(const Font& f);
 
     ~TextRND() override;
@@ -67,8 +67,15 @@ class TextRND : public Renderer {
 class CircleRND : public Renderer {
   public:
     void init(R13* _prend) override;
-    void render(Vec2 center, float radius, Color color);
+    void render(Vec2<float> center, float radius, Color color);
     ~CircleRND() override;
+};
+
+class LineRND : public Renderer {
+  public:
+    void init(R13* _prend) override;
+    void render(Line line, Color color);
+    ~LineRND() override;
 };
 
 class AudioPlayer {
@@ -79,6 +86,7 @@ class AudioPlayer {
     void stop();
     void loop();
     void unloop();
+    void set_volume(float volume);
 
   private:
     std::unique_ptr<ma_sound> sound = NULL;

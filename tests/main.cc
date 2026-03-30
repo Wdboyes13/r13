@@ -4,17 +4,17 @@ int main() {
     auto rnd = new R13(1280, 720);
     auto dms = rnd->get_dimensions();
 
-    Rectangle sqr = { dms.x / 2, dms.y / 2, 25, 25 };
+    Rectangle sqr = { (float)(dms.x / 2), (float)(dms.y / 2), 25, 25 };
 
     auto text_size = rnd->measure_text("test", 1);
 
     while (!rnd->should_close()) {
         if (rnd->is_key_down(KEY_W)) {
-            sqr.y++;
+            sqr.y--;
         }
 
         if (rnd->is_key_down(KEY_S)) {
-            sqr.y--;
+            sqr.y++;
         }
 
         if (rnd->is_key_down(KEY_A)) {
@@ -27,10 +27,7 @@ int main() {
 
         rnd->begin_draw({ 0, 0, 0, 1 });
         rnd->render_rectangle(sqr, Color{ 1, 1, 1, 1 });
-        rnd->render_text(
-            "test",
-            { (dms.x / 2) - (text_size.x / 2), 14 },
-            { 1, 1, 1, 1 });
+        rnd->render_text("test", { sqr.x, sqr.y }, { 1, 1, 1, 1 });
         rnd->end_draw();
     }
 }

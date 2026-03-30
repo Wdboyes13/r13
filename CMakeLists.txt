@@ -19,7 +19,7 @@ add_subdirectory(assets)
 add_subdirectory(tests)
 add_subdirectory(lib)
 
-file(GLOB LIB_SOURCES CONFIGURE_DEPENDS "src/*.cc")
+file(GLOB_RECURSE LIB_SOURCES CONFIGURE_DEPENDS "src/*.cc")
 
 add_library(
     ${CMAKE_PROJECT_NAME}

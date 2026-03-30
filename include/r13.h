@@ -16,13 +16,16 @@ SPDX-License-Identifier: MIT */
 
 #include <map>
 #include <memory>
+#include <random>
 #include <string>
+#include <vector>
 
 extern "C" typedef struct GLFWwindow GLFWwindow;
 
 class RectRND;
 class TextRND;
 class CircleRND;
+class LineRND;
 class AudioPlayer;
 
 #ifdef _MSC_VER
@@ -60,14 +63,14 @@ struct API Font {
      * @param scale The scale it will be rendered at
      * @return The size of "text" when rendered at "scale" as a Vec2
      */
-    Vec2 measure(const std::string& text, float scale = 1);
+    Vec2<float> measure(const std::string& text, float scale = 1);
 
   private:
     friend TextRND;
     struct Character {
         unsigned int texture_id; // id of the glyph texture
-        IVec2 size;              // size of glyph
-        IVec2 bearing;           // offset from baseline to left/top of glyph
+        Vec2<int> size;          // size of glyph
+        Vec2<int> bearing;       // offset from baseline to left/top of glyph
         unsigned int advance;    // horiz offset to advance to next glyph
     };
     std::map<char, Character> characters;
@@ -133,7 +136,7 @@ class API R13 {
      * @brief Gets the dimensions of the current window
      * @returns a Vec2 containing the current window size
      */
-    Vec2 get_dimensions();
+    Vec2<int> get_dimensions();
 
     /**
      * @brief Starts drawing to the window
@@ -154,6 +157,18 @@ class API R13 {
     bool is_key_down(int k);
 
     /**
+     * @brief Reports if a mouse button is down
+     * @param b The mouse button to check
+     * @return a bool reporting if the mouse button "b" is currently down
+     */
+    bool is_mouse_button_down(int b);
+
+    Vec2<double> get_mouse_pos(); ///< Gets the current position of the mouse cursor
+
+    using KeyCallback = void (*)(GLFWwindow* window, int key, int scancode, int action, int mods);
+    void set_key_callback(KeyCallback callback); ///< Sets the key callback for the window, see GLFW documentation for more details on how key callbacks work
+
+    /**
      * @brief Tells if we should close the window and cleanup the game
      * Example usage:
      * @code
@@ -164,6 +179,10 @@ class API R13 {
      * @return A bool reporting if the window should be closed
      */
     bool should_close();
+
+    uint64_t get_delta_time();                            ///< Gets the time in milliseconds since the last frame, useful for framerate independent movement
+    int get_fps();                                        ///< Gets the current framerate, useful for debugging and performance monitoring
+    int64_t get_random(int64_t min = 0, int64_t max = 0); ///< Gets a random number between min and max, if max is 0, it will be set to the maximum value of int64_t, and if min is 0, it will be set to the minimum value of int64_t
 
     /**
      * @brief Renders a rectangle to the current frame
@@ -179,12 +198,12 @@ class API R13 {
      * @param color The colour the text should be
      * @param scale The scale to render the text at, by default 1
      */
-    void render_text(std::string text, Vec2 pos, Color color, float scale = 1);
+    void render_text(std::string text, Vec2<float> pos, Color color, float scale = 1);
 
     /**
      * @see Font::measure
      */
-    Vec2 measure_text(const std::string& text, float scale = 1);
+    Vec2<float> measure_text(const std::string& text, float scale = 1);
 
     /**
      * @brief Sets the font to use
@@ -199,7 +218,14 @@ class API R13 {
      * @param radius The radius of the circle to render
      * @param color The colour to render the circle as
      */
-    void render_circle(Vec2 center, float radius, Color color);
+    void render_circle(Vec2<float> center, float radius, Color color);
+
+    /**
+     * @brief Renders a line to the current frame
+     * @param line The line to render
+     * @param color The colour to render the line as
+     */
+    void render_line(Line line, Color color);
 
     /**
      * @brief Loads an audio file
@@ -213,17 +239,22 @@ class API R13 {
     void stop_audio();   ///< Stops the current audio file
     void loop_audio();   ///< Sets the current audio file to loop
     void unloop_audio(); ///< Sets the current audio file to not loop
+    void set_volume_audio(float volume); ///< Sets the volume of the current audio file, from 0 to 1
 
   private:
     void init();
 
     const int font_sz;
     const int width, height;
+    std::vector<uint64_t> frame_times;
 
     std::unique_ptr<RectRND> rect;
     std::unique_ptr<TextRND> text;
     std::unique_ptr<CircleRND> circle;
+    std::unique_ptr<LineRND> line;
     std::unique_ptr<AudioPlayer> audio;
+
+    std::mt19937_64 rng;
 
     GLFWwindow* window;
 };

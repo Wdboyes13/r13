@@ -49,10 +49,14 @@ void R13::init() {
     rect = std::make_unique<RectRND>();
     text = std::make_unique<TextRND>(font_sz);
     circle = std::make_unique<CircleRND>();
+    line = std::make_unique<LineRND>();
 
     rect->init(this);
     text->init(this);
     circle->init(this);
+    line->init(this);
 
     audio = std::make_unique<AudioPlayer>();
+
+    rng = std::mt19937_64(std::random_device{}());
 }

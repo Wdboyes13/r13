@@ -1,27 +1,24 @@
 #define R13_PRIVATE_ACCESS
-
 #include <assets.h>
+#include <glad/gl.h>
 #include <r13.h>
 #include <r13priv/classes.h>
-
-#include <glad/gl.h>
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 #include <memory>
 
-void RectRND::init(R13* _prend) {
+void LineRND::init(R13* _prend) {
     prend = _prend;
-
     auto dimensions = prend->get_dimensions();
 
     shader = std::make_unique<Shader>(
-        rect_vert,
-        rect_vert_len,
-        rect_frag,
-        rect_frag_len);
+        line_vert,
+        line_vert_len,
+        line_frag,
+        line_frag_len);
 
-    glm::mat4 projection = glm::ortho(0.0f, dimensions.x, 0.0f, dimensions.y);
+    glm::mat4 projection = glm::ortho(0.0f, (float)dimensions.x, (float)dimensions.y, 0.0f);
     shader->use();
     glUniformMatrix4fv(glGetUniformLocation(shader->id, "projection"), 1, GL_FALSE, glm::value_ptr(projection));
 
@@ -36,25 +33,15 @@ void RectRND::init(R13* _prend) {
     glBindVertexArray(0);
 }
 
-void RectRND::render(Rectangle rect, Color color) {
+void LineRND::render(Line line, Color color) {
     shader->use();
     shader->set_vec4("color", color);
 
     glBindVertexArray(vao);
 
-    float xpos = rect.x;
-    float ypos = rect.y;
-    float w = rect.width;
-    float h = rect.height;
-
-    float vertices[6][2] = {
-        { xpos, ypos + h }, // Top-left
-        { xpos, ypos },     // Bottom-left
-        { xpos + w, ypos }, // Bottom-right
-
-        { xpos, ypos + h },    // Top-left
-        { xpos + w, ypos },    // Bottom-right
-        { xpos + w, ypos + h } // Top-right
+    float vertices[2][2] = {
+        { line.x1, line.y1 },
+        { line.x2, line.y2 }
     };
 
     // Update vbo
@@ -62,12 +49,12 @@ void RectRND::render(Rectangle rect, Color color) {
     glBufferSubData(GL_ARRAY_BUFFER, 0, sizeof(vertices), vertices);
     glBindBuffer(GL_ARRAY_BUFFER, 0);
 
-    // Draw
-    glDrawArrays(GL_TRIANGLES, 0, 6);
+    glDrawArrays(GL_LINES, 0, 2);
+
     glBindVertexArray(0);
 }
 
-RectRND::~RectRND() {
+LineRND::~LineRND() {
     if (vao) {
         glDeleteVertexArrays(1, &vao);
     }

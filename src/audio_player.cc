@@ -66,3 +66,9 @@ void AudioPlayer::unloop() {
         ma_sound_set_looping(sound.get(), false);
     }
 }
+
+void AudioPlayer::set_volume(float volume) {
+    if (sound) {
+        ma_sound_set_volume(sound.get(), volume);
+    }
+}

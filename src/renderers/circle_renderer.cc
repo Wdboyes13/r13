@@ -20,7 +20,7 @@ void CircleRND::init(R13* _prend) {
         circle_frag,
         circle_frag_len);
 
-    glm::mat4 projection = glm::ortho(0.0f, dimensions.x, 0.0f, dimensions.y);
+    glm::mat4 projection = glm::ortho(0.0f, (float)dimensions.x, (float)dimensions.y, 0.0f);
     shader->use();
     glUniformMatrix4fv(glGetUniformLocation(shader->id, "projection"), 1, GL_FALSE, glm::value_ptr(projection));
 
@@ -37,7 +37,7 @@ void CircleRND::init(R13* _prend) {
     glBindVertexArray(0);
 }
 
-void CircleRND::render(Vec2 center, float radius, Color color) {
+void CircleRND::render(Vec2<float> center, float radius, Color color) {
     shader->use();
     shader->set_vec4("color", color);
 
@@ -52,12 +52,12 @@ void CircleRND::render(Vec2 center, float radius, Color color) {
     // Vertices with texture coordinates for the fragment shader
     // Format: [x, y, texCoordX, texCoordY]
     float vertices[6][4] = {
-        { xpos, ypos + h, -1.0f, 1.0f },   // Top-left
-        { xpos, ypos, -1.0f, -1.0f },      // Bottom-left
-        { xpos + w, ypos, 1.0f, -1.0f },   // Bottom-right
-        { xpos, ypos + h, -1.0f, 1.0f },   // Top-left
-        { xpos + w, ypos, 1.0f, -1.0f },   // Bottom-right
-        { xpos + w, ypos + h, 1.0f, 1.0f } // Top-right
+        { xpos, ypos, -1.0f, -1.0f },       // Top-left
+        { xpos, ypos + h, -1.0f, 1.0f },    // Bottom-left
+        { xpos + w, ypos + h, 1.0f, 1.0f }, // Bottom-right
+        { xpos, ypos, -1.0f, -1.0f },       // Top-left
+        { xpos + w, ypos + h, 1.0f, 1.0f }, // Bottom-right
+        { xpos + w, ypos, 1.0f, -1.0f }     // Top-right
     };
 
     // Update VBO

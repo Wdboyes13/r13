@@ -7,11 +7,11 @@ void R13::render_rectangle(Rectangle rect, Color color) {
     return this->rect->render(rect, color);
 }
 
-void R13::render_text(std::string text, Vec2 pos, Color color, float scale) {
+void R13::render_text(std::string text, Vec2<float> pos, Color color, float scale) {
     return this->text->render(text, pos, color, scale);
 }
 
-Vec2 R13::measure_text(const std::string& text, float scale) {
+Vec2<float> R13::measure_text(const std::string& text, float scale) {
     return this->text->measure(text, scale);
 }
 
@@ -19,8 +19,12 @@ void R13::set_font_text(const Font& f) {
     return text->set_font(f);
 }
 
-void R13::render_circle(Vec2 center, float radius, Color color) {
+void R13::render_circle(Vec2<float> center, float radius, Color color) {
     return circle->render(center, radius, color);
+}
+
+void R13::render_line(Line line, Color color) {
+    return this->line->render(line, color);
 }
 
 bool R13::load_file_audio(const std::string& path) {

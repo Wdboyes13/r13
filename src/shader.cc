@@ -56,14 +56,14 @@ Shader::~Shader() {
 
 void Shader::use() { glUseProgram(id); }
 
-void Shader::set_vec2(const char* name, Vec2 v) {
+void Shader::set_vec2(const char* name, Vec2<float> v) {
     glUniform2f(glGetUniformLocation(id, name), v.x, v.y);
 }
-void Shader::set_vec3(const char* name, Vec3 v) {
+void Shader::set_vec3(const char* name, Vec3<float> v) {
     glUniform3f(glGetUniformLocation(id, name), v.x, v.y, v.z);
 }
 
-void Shader::set_vec4(const char* name, Vec4 v) {
+void Shader::set_vec4(const char* name, Vec4<float> v) {
     glUniform4f(glGetUniformLocation(id, name), v.x, v.y, v.z, v.w);
 }
 

@@ -5,6 +5,8 @@ set(_assets
     rect.vert
     text.frag
     text.vert
+    line.frag
+    line.vert
     vt323.ttf
 )
 

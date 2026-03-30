@@ -23,7 +23,7 @@ void TextRND::init(R13* _prend) {
         text_frag,
         text_frag_len);
 
-    glm::mat4 projection = glm::ortho(0.0f, dimensions.x, 0.0f, dimensions.y);
+    glm::mat4 projection = glm::ortho(0.0f, (float)dimensions.x, (float)dimensions.y, 0.0f);
     shader->use();
     glUniformMatrix4fv(glGetUniformLocation(shader->id, "projection"), 1, GL_FALSE, glm::value_ptr(projection));
     font = std::make_unique<Font>();
@@ -38,7 +38,7 @@ void TextRND::init(R13* _prend) {
     glBindVertexArray(0);
 }
 
-void TextRND::render(std::string text, Vec2 pos, Color color, float scale) {
+void TextRND::render(std::string text, Vec2<float> pos, Color color, float scale) {
     // activate corresponding render state
     shader->use();
     shader->set_vec4("textColor", color);
@@ -51,18 +51,18 @@ void TextRND::render(std::string text, Vec2 pos, Color color, float scale) {
         Font::Character ch = font->characters[*c];
 
         float xpos = pos.x + ch.bearing.x * scale;
-        float ypos = pos.y - (ch.size.y - ch.bearing.y) * scale;
+        float ypos = pos.y + ch.bearing.y * scale;
 
         float w = ch.size.x * scale;
         float h = ch.size.y * scale;
         float vertices[6][4] = {
-            { xpos, ypos + h, 0.0f, 0.0f },
-            { xpos, ypos, 0.0f, 1.0f },
-            { xpos + w, ypos, 1.0f, 1.0f },
+            { xpos, ypos, 0.0f, 0.0f },
+            { xpos, ypos + h, 0.0f, 1.0f },
+            { xpos + w, ypos + h, 1.0f, 1.0f },
 
-            { xpos, ypos + h, 0.0f, 0.0f },
-            { xpos + w, ypos, 1.0f, 1.0f },
-            { xpos + w, ypos + h, 1.0f, 0.0f }
+            { xpos, ypos, 0.0f, 0.0f },
+            { xpos + w, ypos + h, 1.0f, 1.0f },
+            { xpos + w, ypos, 1.0f, 0.0f }
         };
         glBindTexture(GL_TEXTURE_2D, ch.texture_id);
         glBindBuffer(GL_ARRAY_BUFFER, vbo);
@@ -85,7 +85,7 @@ TextRND::~TextRND() {
     }
 }
 
-Vec2 TextRND::measure(const std::string& text, float scale) {
+Vec2<float> TextRND::measure(const std::string& text, float scale) {
     return font->measure(text, scale);
 }
 

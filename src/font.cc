@@ -71,11 +71,11 @@ Font::Font(const std::string& path, int size) {
             glBindTexture(GL_TEXTURE_2D, 0);
         }
 
-        characters.insert({ (char)c, { .texture_id = texture, .size = IVec2{ w, h }, .bearing = IVec2{ x0, y0 }, .advance = (unsigned int)(adv * scale * 64) } });
+        characters.insert({ (char)c, { .texture_id = texture, .size = Vec2<int>{ w, h }, .bearing = Vec2<int>{ x0, y0 }, .advance = (unsigned int)(adv * scale * 64) } });
     }
 }
 
-Vec2 Font::measure(const std::string& text, float scale) {
+Vec2<float> Font::measure(const std::string& text, float scale) {
     float width = 0.0f;
     float height = 0.0f;
 
@@ -88,7 +88,7 @@ Vec2 Font::measure(const std::string& text, float scale) {
         }
     }
 
-    return Vec2{ width, height };
+    return Vec2<float>{ width, height };
 }
 
 Font::~Font() {
