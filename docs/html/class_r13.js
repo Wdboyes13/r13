@@ -24,6 +24,12 @@ var class_r13 =
     [ "set_font_text", "class_r13.html#a6dd0945460704b32b5f8150e91c64e42", null ],
     [ "set_key_callback", "class_r13.html#a1e6e2d500395d66421f664f3556ac01e", null ],
     [ "set_volume_audio", "class_r13.html#aca126671b1e6adbeae324a6616b2f978", null ],
+    [ "set_window_fullscreen", "class_r13.html#a5927b27a6f203512705d1f9f1084d266", null ],
+    [ "set_window_icon", "class_r13.html#ab5e5ff7414c48db75dec597205ca5ad2", null ],
+    [ "set_window_opacity", "class_r13.html#a5983523720906a3c4da43192d12086d2", null ],
+    [ "set_window_pos", "class_r13.html#ab3e79a537c8806f0949dc9832332faa8", null ],
+    [ "set_window_size", "class_r13.html#af871e4b58a9b4029eadecc476ac5abaa", null ],
+    [ "set_window_title", "class_r13.html#aa2c694d049fbf0f78a0ad1ba575aa5aa", null ],
     [ "should_close", "class_r13.html#a300f5c9b8c68858fe238b22eb5ee56b5", null ],
     [ "stop_audio", "class_r13.html#ac0df94fd69e90251a083dda1f98809be", null ],
     [ "unloop_audio", "class_r13.html#adc82246133598ba9b67660452cb091fb", null ]

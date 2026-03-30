@@ -133,6 +133,44 @@ class API R13 {
     ~R13();
 
     /**
+     * @brief Set the window icon object
+     *
+     * @param path path to the file
+     * @param height height of the image
+     * @param width width of the image
+     * @throws std::runtime_error if the file can't be opened
+     */
+    void set_window_icon(const std::string& path, int height, int width);
+    /**
+     * @brief Set the window title object
+     *
+     * @param title title to set to
+     */
+    void set_window_title(const std::string& title);
+    /**
+     * @brief Set the window pos object
+     *
+     * @param size position to move the window to
+     */
+    void set_window_pos(Vec2<int> size);
+    /**
+     * @brief Set the window opacity object
+     *
+     * @param opacity opacity to set the window to, from 0 to 1
+     */
+    void set_window_opacity(float opacity);
+    /**
+     * @brief Set the window size object
+     *
+     * @param size size to set the window to
+     */
+    void set_window_size(Vec2<int> size);
+    /**
+     * @brief Set the window to fullscreen
+     */
+    void set_window_fullscreen();
+
+    /**
      * @brief Gets the dimensions of the current window
      * @returns a Vec2 containing the current window size
      */

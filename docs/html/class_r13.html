@@ -106,6 +106,18 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a73e984cc242b75b9e55fe25e26fbad6d" id="r_a73e984cc242b75b9e55fe25e26fbad6d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a73e984cc242b75b9e55fe25e26fbad6d">R13</a> (int width, int height, int font_size=48)</td></tr>
 <tr class="memdesc:a73e984cc242b75b9e55fe25e26fbad6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs and initializes an instance of the <a class="el" href="class_r13.html" title="An instance of the R13 engine This class holds and exports functions/instances of fonts,...">R13</a> engine.  <br /></td></tr>
 <tr class="memitem:abbfce674f7d0c6ef4157ca5ecbb75ce0" id="r_abbfce674f7d0c6ef4157ca5ecbb75ce0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abbfce674f7d0c6ef4157ca5ecbb75ce0">~R13</a> ()</td></tr>
+<tr class="memitem:ab5e5ff7414c48db75dec597205ca5ad2" id="r_ab5e5ff7414c48db75dec597205ca5ad2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab5e5ff7414c48db75dec597205ca5ad2">set_window_icon</a> (const std::string &amp;path, int height, int width)</td></tr>
+<tr class="memdesc:ab5e5ff7414c48db75dec597205ca5ad2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the window icon object.  <br /></td></tr>
+<tr class="memitem:aa2c694d049fbf0f78a0ad1ba575aa5aa" id="r_aa2c694d049fbf0f78a0ad1ba575aa5aa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa2c694d049fbf0f78a0ad1ba575aa5aa">set_window_title</a> (const std::string &amp;title)</td></tr>
+<tr class="memdesc:aa2c694d049fbf0f78a0ad1ba575aa5aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the window title object.  <br /></td></tr>
+<tr class="memitem:ab3e79a537c8806f0949dc9832332faa8" id="r_ab3e79a537c8806f0949dc9832332faa8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab3e79a537c8806f0949dc9832332faa8">set_window_pos</a> (<a class="el" href="struct_vec2.html">Vec2</a>&lt; int &gt; size)</td></tr>
+<tr class="memdesc:ab3e79a537c8806f0949dc9832332faa8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the window pos object.  <br /></td></tr>
+<tr class="memitem:a5983523720906a3c4da43192d12086d2" id="r_a5983523720906a3c4da43192d12086d2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5983523720906a3c4da43192d12086d2">set_window_opacity</a> (float opacity)</td></tr>
+<tr class="memdesc:a5983523720906a3c4da43192d12086d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the window opacity object.  <br /></td></tr>
+<tr class="memitem:af871e4b58a9b4029eadecc476ac5abaa" id="r_af871e4b58a9b4029eadecc476ac5abaa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af871e4b58a9b4029eadecc476ac5abaa">set_window_size</a> (<a class="el" href="struct_vec2.html">Vec2</a>&lt; int &gt; size)</td></tr>
+<tr class="memdesc:af871e4b58a9b4029eadecc476ac5abaa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the window size object.  <br /></td></tr>
+<tr class="memitem:a5927b27a6f203512705d1f9f1084d266" id="r_a5927b27a6f203512705d1f9f1084d266"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5927b27a6f203512705d1f9f1084d266">set_window_fullscreen</a> ()</td></tr>
+<tr class="memdesc:a5927b27a6f203512705d1f9f1084d266"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the window to fullscreen.  <br /></td></tr>
 <tr class="memitem:a350708a1216694f1958bbfbbdd1fc576" id="r_a350708a1216694f1958bbfbbdd1fc576"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_vec2.html">Vec2</a>&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a350708a1216694f1958bbfbbdd1fc576">get_dimensions</a> ()</td></tr>
 <tr class="memdesc:a350708a1216694f1958bbfbbdd1fc576"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the dimensions of the current window.  <br /></td></tr>
 <tr class="memitem:aa9f7e8a7d7161e18ca06ec95c642f760" id="r_aa9f7e8a7d7161e18ca06ec95c642f760"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa9f7e8a7d7161e18ca06ec95c642f760">begin_draw</a> (<a class="el" href="struct_color.html">Color</a> c)</td></tr>
@@ -774,6 +786,167 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Sets the volume of the current audio file, from 0 to 1. </p>
+
+</div>
+</div>
+<a id="a5927b27a6f203512705d1f9f1084d266" name="a5927b27a6f203512705d1f9f1084d266"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5927b27a6f203512705d1f9f1084d266">&#9670;&#160;</a></span>set_window_fullscreen()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void R13::set_window_fullscreen </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the window to fullscreen. </p>
+
+</div>
+</div>
+<a id="ab5e5ff7414c48db75dec597205ca5ad2" name="ab5e5ff7414c48db75dec597205ca5ad2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5e5ff7414c48db75dec597205ca5ad2">&#9670;&#160;</a></span>set_window_icon()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void R13::set_window_icon </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>path</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>height</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>width</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the window icon object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>path to the file </td></tr>
+    <tr><td class="paramname">height</td><td>height of the image </td></tr>
+    <tr><td class="paramname">width</td><td>width of the image </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>if the file can't be opened </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a5983523720906a3c4da43192d12086d2" name="a5983523720906a3c4da43192d12086d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5983523720906a3c4da43192d12086d2">&#9670;&#160;</a></span>set_window_opacity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void R13::set_window_opacity </td>
+          <td>(</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>opacity</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the window opacity object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">opacity</td><td>opacity to set the window to, from 0 to 1 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab3e79a537c8806f0949dc9832332faa8" name="ab3e79a537c8806f0949dc9832332faa8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3e79a537c8806f0949dc9832332faa8">&#9670;&#160;</a></span>set_window_pos()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void R13::set_window_pos </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_vec2.html">Vec2</a>&lt; int &gt;</td>          <td class="paramname"><span class="paramname"><em>size</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the window pos object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">size</td><td>position to move the window to </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="af871e4b58a9b4029eadecc476ac5abaa" name="af871e4b58a9b4029eadecc476ac5abaa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af871e4b58a9b4029eadecc476ac5abaa">&#9670;&#160;</a></span>set_window_size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void R13::set_window_size </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_vec2.html">Vec2</a>&lt; int &gt;</td>          <td class="paramname"><span class="paramname"><em>size</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the window size object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">size</td><td>size to set the window to </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa2c694d049fbf0f78a0ad1ba575aa5aa" name="aa2c694d049fbf0f78a0ad1ba575aa5aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2c694d049fbf0f78a0ad1ba575aa5aa">&#9670;&#160;</a></span>set_window_title()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void R13::set_window_title </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>title</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the window title object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">title</td><td>title to set to </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

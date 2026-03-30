@@ -21,6 +21,18 @@ using \mbox{\hyperlink{class_r13_a37429f4d0717e46e34deff60818e5022}{Key\+Callbac
 \begin{DoxyCompactList}\small\item\em Constructs and initializes an instance of the \doxylink{class_r13}{R13} engine. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_r13_abbfce674f7d0c6ef4157ca5ecbb75ce0}{\texorpdfstring{$\sim$}{\string~}\+R13}} ()
 \item 
+void \mbox{\hyperlink{class_r13_ab5e5ff7414c48db75dec597205ca5ad2}{set\+\_\+window\+\_\+icon}} (const std\+::string \&path, int height, int width)
+\begin{DoxyCompactList}\small\item\em Set the window icon object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_r13_aa2c694d049fbf0f78a0ad1ba575aa5aa}{set\+\_\+window\+\_\+title}} (const std\+::string \&title)
+\begin{DoxyCompactList}\small\item\em Set the window title object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_r13_ab3e79a537c8806f0949dc9832332faa8}{set\+\_\+window\+\_\+pos}} (\mbox{\hyperlink{struct_vec2}{Vec2}}$<$ int $>$ size)
+\begin{DoxyCompactList}\small\item\em Set the window pos object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_r13_a5983523720906a3c4da43192d12086d2}{set\+\_\+window\+\_\+opacity}} (float opacity)
+\begin{DoxyCompactList}\small\item\em Set the window opacity object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_r13_af871e4b58a9b4029eadecc476ac5abaa}{set\+\_\+window\+\_\+size}} (\mbox{\hyperlink{struct_vec2}{Vec2}}$<$ int $>$ size)
+\begin{DoxyCompactList}\small\item\em Set the window size object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_r13_a5927b27a6f203512705d1f9f1084d266}{set\+\_\+window\+\_\+fullscreen}} ()
+\begin{DoxyCompactList}\small\item\em Set the window to fullscreen. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{struct_vec2}{Vec2}}$<$ int $>$ \mbox{\hyperlink{class_r13_a350708a1216694f1958bbfbbdd1fc576}{get\+\_\+dimensions}} ()
 \begin{DoxyCompactList}\small\item\em Gets the dimensions of the current window. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_r13_aa9f7e8a7d7161e18ca06ec95c642f760}{begin\+\_\+draw}} (\mbox{\hyperlink{struct_color}{Color}} c)
@@ -447,6 +459,100 @@ void R13\+::set\+\_\+volume\+\_\+audio (\begin{DoxyParamCaption}\item[{float}]{v
 
 Sets the volume of the current audio file, from 0 to 1. 
 
+\Hypertarget{class_r13_a5927b27a6f203512705d1f9f1084d266}\index{R13@{R13}!set\_window\_fullscreen@{set\_window\_fullscreen}}
+\index{set\_window\_fullscreen@{set\_window\_fullscreen}!R13@{R13}}
+\doxysubsubsection{\texorpdfstring{set\_window\_fullscreen()}{set\_window\_fullscreen()}}
+{\footnotesize\ttfamily \label{class_r13_a5927b27a6f203512705d1f9f1084d266} 
+void R13\+::set\+\_\+window\+\_\+fullscreen (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Set the window to fullscreen. 
+
+\Hypertarget{class_r13_ab5e5ff7414c48db75dec597205ca5ad2}\index{R13@{R13}!set\_window\_icon@{set\_window\_icon}}
+\index{set\_window\_icon@{set\_window\_icon}!R13@{R13}}
+\doxysubsubsection{\texorpdfstring{set\_window\_icon()}{set\_window\_icon()}}
+{\footnotesize\ttfamily \label{class_r13_ab5e5ff7414c48db75dec597205ca5ad2} 
+void R13\+::set\+\_\+window\+\_\+icon (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path}{, }\item[{int}]{height}{, }\item[{int}]{width}{}\end{DoxyParamCaption})}
+
+
+
+Set the window icon object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & path to the file \\
+\hline
+{\em height} & height of the image \\
+\hline
+{\em width} & width of the image \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if the file can\textquotesingle{}t be opened \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{class_r13_a5983523720906a3c4da43192d12086d2}\index{R13@{R13}!set\_window\_opacity@{set\_window\_opacity}}
+\index{set\_window\_opacity@{set\_window\_opacity}!R13@{R13}}
+\doxysubsubsection{\texorpdfstring{set\_window\_opacity()}{set\_window\_opacity()}}
+{\footnotesize\ttfamily \label{class_r13_a5983523720906a3c4da43192d12086d2} 
+void R13\+::set\+\_\+window\+\_\+opacity (\begin{DoxyParamCaption}\item[{float}]{opacity}{}\end{DoxyParamCaption})}
+
+
+
+Set the window opacity object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em opacity} & opacity to set the window to, from 0 to 1 \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_r13_ab3e79a537c8806f0949dc9832332faa8}\index{R13@{R13}!set\_window\_pos@{set\_window\_pos}}
+\index{set\_window\_pos@{set\_window\_pos}!R13@{R13}}
+\doxysubsubsection{\texorpdfstring{set\_window\_pos()}{set\_window\_pos()}}
+{\footnotesize\ttfamily \label{class_r13_ab3e79a537c8806f0949dc9832332faa8} 
+void R13\+::set\+\_\+window\+\_\+pos (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_vec2}{Vec2}}$<$ int $>$}]{size}{}\end{DoxyParamCaption})}
+
+
+
+Set the window pos object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em size} & position to move the window to \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_r13_af871e4b58a9b4029eadecc476ac5abaa}\index{R13@{R13}!set\_window\_size@{set\_window\_size}}
+\index{set\_window\_size@{set\_window\_size}!R13@{R13}}
+\doxysubsubsection{\texorpdfstring{set\_window\_size()}{set\_window\_size()}}
+{\footnotesize\ttfamily \label{class_r13_af871e4b58a9b4029eadecc476ac5abaa} 
+void R13\+::set\+\_\+window\+\_\+size (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_vec2}{Vec2}}$<$ int $>$}]{size}{}\end{DoxyParamCaption})}
+
+
+
+Set the window size object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em size} & size to set the window to \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_r13_aa2c694d049fbf0f78a0ad1ba575aa5aa}\index{R13@{R13}!set\_window\_title@{set\_window\_title}}
+\index{set\_window\_title@{set\_window\_title}!R13@{R13}}
+\doxysubsubsection{\texorpdfstring{set\_window\_title()}{set\_window\_title()}}
+{\footnotesize\ttfamily \label{class_r13_aa2c694d049fbf0f78a0ad1ba575aa5aa} 
+void R13\+::set\+\_\+window\+\_\+title (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{title}{}\end{DoxyParamCaption})}
+
+
+
+Set the window title object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em title} & title to set to \\
+\hline
+\end{DoxyParams}
 \Hypertarget{class_r13_a300f5c9b8c68858fe238b22eb5ee56b5}\index{R13@{R13}!should\_close@{should\_close}}
 \index{should\_close@{should\_close}!R13@{R13}}
 \doxysubsubsection{\texorpdfstring{should\_close()}{should\_close()}}

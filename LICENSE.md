@@ -10,7 +10,7 @@ Licensed under the [SIL Open Font License, Version 1.1](/LICENSES/LICENSE.vt323)
 SPDX-License-Identifier: OFL-1.1  
 Obtained from: https://fonts.google.com/specimen/VT323  
 
-## STB TrueType  
+## STB TrueType/Image  
 This library is licensed under the Public Domain  
 Licensed under the [Unlicense OR MIT License](/LICENSES/LICENSE.stbtt)  
 SPDX-License-Identifier: Unlicense OR MIT  

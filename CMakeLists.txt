@@ -13,6 +13,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED YES)
 include(FindPython3)
 list(APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake)
 
+set(LIB_LINKS "")
 set(bindump ${CMAKE_SOURCE_DIR}/scripts/bindump.py)
 
 add_subdirectory(assets)
@@ -31,7 +32,8 @@ target_include_directories(${CMAKE_PROJECT_NAME} PUBLIC
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
     $<INSTALL_INTERFACE:include/r13>
 )
-target_link_libraries(${CMAKE_PROJECT_NAME} PRIVATE assetlib stbtt glad glfw miniaudio glm-header-only)
+
+target_link_libraries(${CMAKE_PROJECT_NAME} PRIVATE ${LIB_LINKS})
 target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE GLFW_INCLUDE_NONE DLL)
 
 include(generate_package)
