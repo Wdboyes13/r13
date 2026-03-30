@@ -7,10 +7,6 @@ Vec2 R13::get_dimensions() {
     return Vec2{ (float)width, (float)height };
 }
 
-void R13::fb_size_callback(GLFWwindow* window, int width, int height) {
-    glViewport(0, 0, width, height);
-}
-
 void R13::begin_draw(Color c) {
     glClearColor(c.r, c.g, c.b, c.a);
     glClear(GL_COLOR_BUFFER_BIT);

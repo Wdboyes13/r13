@@ -52,8 +52,6 @@ class API R13 {
 
     Vec2 get_dimensions();
 
-    static void fb_size_callback(GLFWwindow* window, int width, int height);
-
     void begin_draw(Color c);
     void end_draw();
     bool is_key_down(int k);

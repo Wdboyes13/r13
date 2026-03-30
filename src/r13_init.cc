@@ -14,6 +14,10 @@ R13::~R13() {
     glfwTerminate();
 }
 
+static void fb_size_callback(GLFWwindow* window, int width, int height) {
+    glViewport(0, 0, width, height);
+}
+
 void R13::init() {
     glfwInit();
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
