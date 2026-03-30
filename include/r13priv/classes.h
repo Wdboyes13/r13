@@ -77,6 +77,8 @@ class AudioPlayer {
     void play();
     void pause();
     void stop();
+    void loop();
+    void unloop();
 
   private:
     std::unique_ptr<ma_sound> sound = NULL;

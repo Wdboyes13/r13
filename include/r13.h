@@ -208,18 +208,11 @@ class API R13 {
      */
     bool load_file_audio(const std::string& path);
 
-    /**
-     * @brief Starts playing or unpauses the current audio file
-     */
-    void play_audio();
-    /**
-     * @brief Pauses the current audio file
-     */
-    void pause_audio();
-    /**
-     * @brief Stops the current audio file
-     */
-    void stop_audio();
+    void play_audio();   ///< Starts playing or unpauses the current audio file
+    void pause_audio();  ///< Pauses the current audio file
+    void stop_audio();   ///< Stops the current audio file
+    void loop_audio();   ///< Sets the current audio file to loop
+    void unloop_audio(); ///< Sets the current audio file to not loop
 
   private:
     void init();

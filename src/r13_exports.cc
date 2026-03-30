@@ -38,3 +38,11 @@ void R13::pause_audio() {
 void R13::stop_audio() {
     return audio->stop();
 }
+
+void R13::loop_audio() {
+    return audio->loop();
+}
+
+void R13::unloop_audio() {
+    return audio->unloop();
+}

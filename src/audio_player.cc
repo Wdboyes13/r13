@@ -29,22 +29,40 @@ bool AudioPlayer::load_file(const std::string& path) {
 }
 
 void AudioPlayer::play() {
-    if (paused) {
-        ma_sound_set_start_time_in_pcm_frames(
-            sound.get(),
-            paused_frames);
-        paused = false;
-        paused_frames = 0;
+    if (sound) {
+        if (paused) {
+            ma_sound_set_start_time_in_pcm_frames(
+                sound.get(),
+                paused_frames);
+            paused = false;
+            paused_frames = 0;
+        }
+        ma_sound_start(sound.get());
     }
-    ma_sound_start(sound.get());
 }
 
 void AudioPlayer::pause() {
-    paused_frames = ma_sound_get_time_in_pcm_frames(sound.get());
-    ma_sound_stop(sound.get());
-    paused = true;
+    if (sound) {
+        paused_frames = ma_sound_get_time_in_pcm_frames(sound.get());
+        ma_sound_stop(sound.get());
+        paused = true;
+    }
 }
 
 void AudioPlayer::stop() {
-    ma_sound_stop(sound.get());
+    if (sound) {
+        ma_sound_stop(sound.get());
+    }
+}
+
+void AudioPlayer::loop() {
+    if (sound) {
+        ma_sound_set_looping(sound.get(), true);
+    }
+}
+
+void AudioPlayer::unloop() {
+    if (sound) {
+        ma_sound_set_looping(sound.get(), false);
+    }
 }
