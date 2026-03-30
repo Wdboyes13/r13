@@ -1,0 +1,65 @@
+\doxysection{include/r13.h File Reference}
+\hypertarget{r13_8h}{}\label{r13_8h}\index{include/r13.h@{include/r13.h}}
+
+
+A file containing definitions for keys.  
+
+
+{\ttfamily \#include $<$r13priv/api.\+h$>$}\newline
+{\ttfamily \#include $<$r13priv/keys.\+h$>$}\newline
+{\ttfamily \#include $<$r13priv/structs.\+h$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{struct_font}{Font}}
+\begin{DoxyCompactList}\small\item\em A struct containing data for a font This font struct is to use and load fonts the default font is the VT323 font and is usually loaded automatically when you instantiate the \doxylink{class_r13}{R13} class the default font is selected when the "{}path"{} argument of the constructor is "{}\+\_\+\+\_\+\+DEFAULT\+\_\+\+\_\+"{}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_r13}{R13}}
+\begin{DoxyCompactList}\small\item\em An instance of the \doxylink{class_r13}{R13} engine This class holds and exports functions/instances of fonts, renderers, and audio objects it also manages the Open\+GL, GLFW, and GLAD contexts, offering various mechanisms to control them. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{r13_8h_a64cdb236d844c9be62c035480c5013c1}{R13\+\_\+\+PRIVATE\+\_\+\+ACCESS}}
+\item 
+\#define \mbox{\hyperlink{r13_8h_accc7e884ece2bcbf9b13d6150b15286f}{R13\+\_\+\+MAIN\+\_\+\+HEADER\+\_\+\+PRV}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{r13_8h_a3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}} \mbox{\hyperlink{r13_8h_a3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A file containing definitions for keys. 
+
+
+
+\label{doc-define-members}
+\Hypertarget{r13_8h_doc-define-members}
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{r13_8h_accc7e884ece2bcbf9b13d6150b15286f}\index{r13.h@{r13.h}!R13\_MAIN\_HEADER\_PRV@{R13\_MAIN\_HEADER\_PRV}}
+\index{R13\_MAIN\_HEADER\_PRV@{R13\_MAIN\_HEADER\_PRV}!r13.h@{r13.h}}
+\doxysubsubsection{\texorpdfstring{R13\_MAIN\_HEADER\_PRV}{R13\_MAIN\_HEADER\_PRV}}
+{\footnotesize\ttfamily \label{r13_8h_accc7e884ece2bcbf9b13d6150b15286f} 
+\#define R13\+\_\+\+MAIN\+\_\+\+HEADER\+\_\+\+PRV}
+
+\Hypertarget{r13_8h_a64cdb236d844c9be62c035480c5013c1}\index{r13.h@{r13.h}!R13\_PRIVATE\_ACCESS@{R13\_PRIVATE\_ACCESS}}
+\index{R13\_PRIVATE\_ACCESS@{R13\_PRIVATE\_ACCESS}!r13.h@{r13.h}}
+\doxysubsubsection{\texorpdfstring{R13\_PRIVATE\_ACCESS}{R13\_PRIVATE\_ACCESS}}
+{\footnotesize\ttfamily \label{r13_8h_a64cdb236d844c9be62c035480c5013c1} 
+\#define R13\+\_\+\+PRIVATE\+\_\+\+ACCESS}
+
+
+
+\label{doc-typedef-members}
+\Hypertarget{r13_8h_doc-typedef-members}
+\doxysubsection{Typedef Documentation}
+\Hypertarget{r13_8h_a3c96d80d363e67d13a41b5d1821f3242}\index{r13.h@{r13.h}!GLFWwindow@{GLFWwindow}}
+\index{GLFWwindow@{GLFWwindow}!r13.h@{r13.h}}
+\doxysubsubsection{\texorpdfstring{GLFWwindow}{GLFWwindow}}
+{\footnotesize\ttfamily \label{r13_8h_a3c96d80d363e67d13a41b5d1821f3242} 
+typedef struct \mbox{\hyperlink{r13_8h_a3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}} \mbox{\hyperlink{r13_8h_a3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}}
+

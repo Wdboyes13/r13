@@ -3,6 +3,11 @@
 #    error "This should NOT be included by files not part of R13"
 #endif
 
+/**
+ * @file include/r13.h
+ * @brief A file containing definitions for keys
+ */
+
 #define KEY_UNKNOWN -1
 
 #define KEY_SPACE 32

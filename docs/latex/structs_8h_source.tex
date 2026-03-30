@@ -1,0 +1,48 @@
+\doxysection{structs.\+h}
+\hypertarget{structs_8h_source}{}\label{structs_8h_source}\index{include/r13priv/structs.h@{include/r13priv/structs.h}}
+\mbox{\hyperlink{structs_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#ifndef\ R13\_PRIVATE\_ACCESS}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#\ \ \ \ error\ "{}This\ should\ NOT\ be\ included\ by\ files\ not\ part\ of\ R13"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}api.h"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{struct\ }API\ \mbox{\hyperlink{struct_vec2}{Vec2}}\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_vec2_adf8ee322d4b4bcc04146762c018d731f}{x}};\ }
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_vec2_a30543787e62f6d915543cf1dfb04c094}{y}};\ }
+\DoxyCodeLine{00015\ \};}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{struct\ }API\ \mbox{\hyperlink{struct_vec3}{Vec3}}\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_vec3_a2814580e9b9372738c0a61197ea46b51}{x}};}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_vec3_abc1d241232cb04aa98217a942402ae68}{y}};}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_vec3_a64f3f00cd2dd9076999eeb2f05210388}{z}};}
+\DoxyCodeLine{00021\ \};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{struct\ }API\ \mbox{\hyperlink{struct_vec4}{Vec4}}\ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_vec4_a3d9a7d18ac661965798b0c5bc32c56df}{x}},\ \mbox{\hyperlink{struct_vec4_a21c69aa0ef01a4ea985966c5527bbd69}{y}},\ \mbox{\hyperlink{struct_vec4_a60d0b599c7104dd0c6e2ae0cc4cd0310}{z}},\ \mbox{\hyperlink{struct_vec4_a37bee38ceffb78ccd3875ebf82bd84b2}{w}};}
+\DoxyCodeLine{00025\ \};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{struct\ }API\ \mbox{\hyperlink{struct_i_vec2}{IVec2}}\ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_i_vec2_a5f2b5ae85f5da617ff9d6a2113a2b042}{x}},\ \mbox{\hyperlink{struct_i_vec2_ae965cba5f355d110adab0f8d464238ea}{y}};}
+\DoxyCodeLine{00029\ \};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00035\ \textcolor{keyword}{struct\ }API\ \mbox{\hyperlink{struct_color}{Color}}\ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_color_a3958a556b47d2de3dd45c75aac833c20}{r}};\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_color_a5defbb21620e480e556181772d665f34}{g}};\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_color_a33e482be18d6ea31d2b403bee13683b7}{b}};\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_color_a98047aee65fc3d825f88a76da728fd27}{a}};\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{operator}\ \mbox{\hyperlink{struct_vec4}{Vec4}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_vec4}{Vec4}}\{\ \mbox{\hyperlink{struct_color_a3958a556b47d2de3dd45c75aac833c20}{r}},\ \mbox{\hyperlink{struct_color_a5defbb21620e480e556181772d665f34}{g}},\ \mbox{\hyperlink{struct_color_a33e482be18d6ea31d2b403bee13683b7}{b}},\ \mbox{\hyperlink{struct_color_a98047aee65fc3d825f88a76da728fd27}{a}}\ \};}
+\DoxyCodeLine{00042\ \ \ \ \ \}}
+\DoxyCodeLine{00043\ \};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{keyword}{struct\ }API\ \mbox{\hyperlink{struct_rectangle}{Rectangle}}\ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_rectangle_a40917b61b33bf046d189be401c13cc7f}{x}};\ \ \ \ \ \ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_rectangle_a86f71f891bada4e5e920a4a9b7c505a3}{y}};\ \ \ \ \ \ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_rectangle_a080c1530eb46073e9880b01d14c341fd}{height}};\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_rectangle_adbe8ae69919acc459e7ab155a69bc8ff}{width}};\ \ }
+\DoxyCodeLine{00050\ \};}
+
+\end{DoxyCode}

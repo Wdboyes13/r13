@@ -1,0 +1,96 @@
+\doxysection{Font Class Reference}
+\hypertarget{struct_font}{}\label{struct_font}\index{Font@{Font}}
+
+
+A struct containing data for a font This font struct is to use and load fonts the default font is the VT323 font and is usually loaded automatically when you instantiate the \doxylink{class_r13}{R13} class the default font is selected when the "{}path"{} argument of the constructor is "{}\+\_\+\+\_\+\+DEFAULT\+\_\+\+\_\+"{}.  
+
+
+
+
+{\ttfamily \#include $<$r13.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_font_a9c042a6bcfec5ee99db9c0b344baecad}{Font}} (const std\+::string \&path="{}\+\_\+\+\_\+\+DEFAULT\+\_\+\+\_\+"{}, int size=48)
+\begin{DoxyCompactList}\small\item\em Loads in a \doxylink{struct_font}{Font}, constructing an instance of the \doxylink{struct_font}{Font} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_font_a134aaa2f78af0c12d3ce504957169768}{\texorpdfstring{$\sim$}{\string~}\+Font}} ()
+\item 
+\mbox{\hyperlink{struct_vec2}{Vec2}} \mbox{\hyperlink{struct_font_a186523fa4e2934b34e4af68af382253c}{measure}} (const std\+::string \&text, float scale=1)
+\begin{DoxyCompactList}\small\item\em Returns the size of "{}text"{} when using this \doxylink{struct_font}{Font} at "{}scale"{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A struct containing data for a font This font struct is to use and load fonts the default font is the VT323 font and is usually loaded automatically when you instantiate the \doxylink{class_r13}{R13} class the default font is selected when the "{}path"{} argument of the constructor is "{}\+\_\+\+\_\+\+DEFAULT\+\_\+\+\_\+"{}. 
+
+Example usage\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{struct_font_a9c042a6bcfec5ee99db9c0b344baecad}{Font}}\ my\_font(\textcolor{stringliteral}{"{}path/to/my\_font.ttf"{}})}
+\DoxyCodeLine{r13-\/>set\_font(my\_font)}
+
+\end{DoxyCode}
+ 
+
+\label{doc-constructors}
+\Hypertarget{struct_font_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{struct_font_a9c042a6bcfec5ee99db9c0b344baecad}\index{Font@{Font}!Font@{Font}}
+\index{Font@{Font}!Font@{Font}}
+\doxysubsubsection{\texorpdfstring{Font()}{Font()}}
+{\footnotesize\ttfamily \label{struct_font_a9c042a6bcfec5ee99db9c0b344baecad} 
+Font\+::\+Font (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path}{ = {\ttfamily "{}\+\_\+\+\_\+DEFAULT\+\_\+\+\_\+"{}}, }\item[{int}]{size}{ = {\ttfamily 48}}\end{DoxyParamCaption})}
+
+
+
+Loads in a \doxylink{struct_font}{Font}, constructing an instance of the \doxylink{struct_font}{Font} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & The path to the font to load, by default "{}\+\_\+\+\_\+\+DEFAULT\+\_\+\+\_\+"{} which loads the builtin VT323 font \\
+\hline
+{\em size} & The size to load the font as, by default it is 48 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if the file can\textquotesingle{}t be opened \\
+\hline
+{\em std\+::runtime\+\_\+error} & if the font can\textquotesingle{}t be used/initialized \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{struct_font_a134aaa2f78af0c12d3ce504957169768}\index{Font@{Font}!````~Font@{\texorpdfstring{$\sim$}{\string~}Font}}
+\index{````~Font@{\texorpdfstring{$\sim$}{\string~}Font}!Font@{Font}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Font()}{\string~Font()}}
+{\footnotesize\ttfamily \label{struct_font_a134aaa2f78af0c12d3ce504957169768} 
+Font\+::\texorpdfstring{$\sim$}{\string~}\+Font (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\label{doc-func-members}
+\Hypertarget{struct_font_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{struct_font_a186523fa4e2934b34e4af68af382253c}\index{Font@{Font}!measure@{measure}}
+\index{measure@{measure}!Font@{Font}}
+\doxysubsubsection{\texorpdfstring{measure()}{measure()}}
+{\footnotesize\ttfamily \label{struct_font_a186523fa4e2934b34e4af68af382253c} 
+\mbox{\hyperlink{struct_vec2}{Vec2}} Font\+::measure (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{text}{, }\item[{float}]{scale}{ = {\ttfamily 1}}\end{DoxyParamCaption})}
+
+
+
+Returns the size of "{}text"{} when using this \doxylink{struct_font}{Font} at "{}scale"{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em text} & The text to get the size of \\
+\hline
+{\em scale} & The scale it will be rendered at \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The size of "{}text"{} when rendered at "{}scale"{} as a \doxylink{struct_vec2}{Vec2} 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{r13_8h}{r13.\+h}}\end{DoxyCompactItemize}
