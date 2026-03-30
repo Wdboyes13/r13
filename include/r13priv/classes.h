@@ -5,6 +5,7 @@
 
 #include <miniaudio.h>
 #include <memory>
+#include <queue>
 #include <string>
 #include "structs.h"
 
@@ -80,7 +81,16 @@ class LineRND : public Renderer {
 
 class AudioPlayer {
   public:
+    ~AudioPlayer();
+
+    bool load_file_queue(const std::string& path);
     bool load_file(const std::string& path);
+    bool load_file_memory(const unsigned char* data, size_t len);
+    bool load_file_memory_queue(const unsigned char* data, size_t len);
+
+    void clear_queue();
+    void skip_current();
+
     void play();
     void pause();
     void stop();
@@ -89,8 +99,22 @@ class AudioPlayer {
     void set_volume(float volume);
 
   private:
-    std::unique_ptr<ma_sound> sound = NULL;
+    struct PendingSound {
+        std::unique_ptr<ma_sound> sound;
+        std::string resource_name;
+        bool is_memory = false;
+    };
+
+    ma_result ensure_engine();
+    bool make_sound_from_resource_name(const std::string& resource_name, PendingSound& out_sound, bool is_memory);
+    void uninit_pending_sound(PendingSound& pending_sound);
+    void reset_playback_state();
+
+    std::unique_ptr<ma_resource_manager> resource_mgr = NULL;
     std::unique_ptr<ma_engine> engine = NULL;
+    PendingSound current_sound;
+    std::queue<PendingSound> audio_queue;
+    uint64_t memory_resource_counter = 0;
     uint64_t paused_frames = 0;
     bool paused = false;
 };
