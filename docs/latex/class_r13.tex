@@ -43,7 +43,11 @@ void \mbox{\hyperlink{class_r13_a570d3d3e84b8be3abf7085b31f952d1c}{play\+\_\+aud
 void \mbox{\hyperlink{class_r13_ab7f454e26b41326af95431dd42222b07}{pause\+\_\+audio}} ()
 \begin{DoxyCompactList}\small\item\em Pauses the current audio file. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_r13_ac0df94fd69e90251a083dda1f98809be}{stop\+\_\+audio}} ()
-\begin{DoxyCompactList}\small\item\em Stops the current audio file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Stops the current audio file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_r13_aedf20a66583bc50ee325fe8d1b85008c}{loop\+\_\+audio}} ()
+\begin{DoxyCompactList}\small\item\em Sets the current audio file to loop. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_r13_adc82246133598ba9b67660452cb091fb}{unloop\+\_\+audio}} ()
+\begin{DoxyCompactList}\small\item\em Sets the current audio file to not loop. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -202,6 +206,16 @@ Loads an audio file.
 \begin{DoxyReturn}{Returns}
 A bool indicating whether the loading failed, or succeeded 
 \end{DoxyReturn}
+\Hypertarget{class_r13_aedf20a66583bc50ee325fe8d1b85008c}\index{R13@{R13}!loop\_audio@{loop\_audio}}
+\index{loop\_audio@{loop\_audio}!R13@{R13}}
+\doxysubsubsection{\texorpdfstring{loop\_audio()}{loop\_audio()}}
+{\footnotesize\ttfamily \label{class_r13_aedf20a66583bc50ee325fe8d1b85008c} 
+void R13\+::loop\+\_\+audio (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Sets the current audio file to loop. 
+
 \Hypertarget{class_r13_a6e26bd4427e884a5c89bc2d59b318bbc}\index{R13@{R13}!measure\_text@{measure\_text}}
 \index{measure\_text@{measure\_text}!R13@{R13}}
 \doxysubsubsection{\texorpdfstring{measure\_text()}{measure\_text()}}
@@ -335,6 +349,16 @@ void R13\+::stop\+\_\+audio (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})
 
 
 Stops the current audio file. 
+
+\Hypertarget{class_r13_adc82246133598ba9b67660452cb091fb}\index{R13@{R13}!unloop\_audio@{unloop\_audio}}
+\index{unloop\_audio@{unloop\_audio}!R13@{R13}}
+\doxysubsubsection{\texorpdfstring{unloop\_audio()}{unloop\_audio()}}
+{\footnotesize\ttfamily \label{class_r13_adc82246133598ba9b67660452cb091fb} 
+void R13\+::unloop\+\_\+audio (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Sets the current audio file to not loop. 
 
 
 

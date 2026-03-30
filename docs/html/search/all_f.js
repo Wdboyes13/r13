@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['vec2_0',['Vec2',['../struct_vec2.html',1,'']]],
-  ['vec3_1',['Vec3',['../struct_vec3.html',1,'']]],
-  ['vec4_2',['Vec4',['../struct_vec4.html',1,'']]]
+  ['unloop_5faudio_0',['unloop_audio',['../class_r13.html#adc82246133598ba9b67660452cb091fb',1,'R13']]]
 ];

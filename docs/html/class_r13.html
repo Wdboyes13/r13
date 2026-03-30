@@ -129,6 +129,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ab7f454e26b41326af95431dd42222b07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pauses the current audio file.  <br /></td></tr>
 <tr class="memitem:ac0df94fd69e90251a083dda1f98809be" id="r_ac0df94fd69e90251a083dda1f98809be"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac0df94fd69e90251a083dda1f98809be">stop_audio</a> ()</td></tr>
 <tr class="memdesc:ac0df94fd69e90251a083dda1f98809be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stops the current audio file.  <br /></td></tr>
+<tr class="memitem:aedf20a66583bc50ee325fe8d1b85008c" id="r_aedf20a66583bc50ee325fe8d1b85008c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aedf20a66583bc50ee325fe8d1b85008c">loop_audio</a> ()</td></tr>
+<tr class="memdesc:aedf20a66583bc50ee325fe8d1b85008c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the current audio file to loop.  <br /></td></tr>
+<tr class="memitem:adc82246133598ba9b67660452cb091fb" id="r_adc82246133598ba9b67660452cb091fb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adc82246133598ba9b67660452cb091fb">unloop_audio</a> ()</td></tr>
+<tr class="memdesc:adc82246133598ba9b67660452cb091fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the current audio file to not loop.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>An instance of the <a class="el" href="class_r13.html" title="An instance of the R13 engine This class holds and exports functions/instances of fonts,...">R13</a> engine This class holds and exports functions/instances of fonts, renderers, and audio objects it also manages the OpenGL, GLFW, and GLAD contexts, offering various mechanisms to control them. </p>
@@ -348,6 +352,25 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A bool indicating whether the loading failed, or succeeded </dd></dl>
+
+</div>
+</div>
+<a id="aedf20a66583bc50ee325fe8d1b85008c" name="aedf20a66583bc50ee325fe8d1b85008c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aedf20a66583bc50ee325fe8d1b85008c">&#9670;&#160;</a></span>loop_audio()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void R13::loop_audio </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the current audio file to loop. </p>
 
 </div>
 </div>
@@ -584,6 +607,25 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Stops the current audio file. </p>
+
+</div>
+</div>
+<a id="adc82246133598ba9b67660452cb091fb" name="adc82246133598ba9b67660452cb091fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc82246133598ba9b67660452cb091fb">&#9670;&#160;</a></span>unloop_audio()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void R13::unloop_audio </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the current audio file to not loop. </p>
 
 </div>
 </div>

@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['_7efont_0',['~Font',['../struct_font.html#a134aaa2f78af0c12d3ce504957169768',1,'Font']]],
-  ['_7er13_1',['~R13',['../class_r13.html#abbfce674f7d0c6ef4157ca5ecbb75ce0',1,'R13']]]
+  ['z_0',['z',['../struct_vec3.html#a64f3f00cd2dd9076999eeb2f05210388',1,'Vec3::z'],['../struct_vec4.html#a60d0b599c7104dd0c6e2ae0cc4cd0310',1,'Vec4::z']]]
 ];

@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['w_0',['w',['../struct_vec4.html#a37bee38ceffb78ccd3875ebf82bd84b2',1,'Vec4']]],
-  ['width_1',['width',['../struct_rectangle.html#adbe8ae69919acc459e7ab155a69bc8ff',1,'Rectangle']]]
+  ['vec2_0',['Vec2',['../struct_vec2.html',1,'']]],
+  ['vec3_1',['Vec3',['../struct_vec3.html',1,'']]],
+  ['vec4_2',['Vec4',['../struct_vec4.html',1,'']]]
 ];

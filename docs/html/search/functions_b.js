@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['_7efont_0',['~Font',['../struct_font.html#a134aaa2f78af0c12d3ce504957169768',1,'Font']]],
-  ['_7er13_1',['~R13',['../class_r13.html#abbfce674f7d0c6ef4157ca5ecbb75ce0',1,'R13']]]
+  ['unloop_5faudio_0',['unloop_audio',['../class_r13.html#adc82246133598ba9b67660452cb091fb',1,'R13']]]
 ];
