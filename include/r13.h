@@ -18,13 +18,17 @@ SPDX-License-Identifier: MIT */
 #include <memory>
 #include <string>
 
-typedef struct GLFWwindow GLFWwindow;
+extern "C" typedef struct GLFWwindow GLFWwindow;
 
 class RectRND;
 class TextRND;
 class CircleRND;
 class AudioPlayer;
 
+#ifdef _MSC_VER
+#    pragma warning(push)
+#    pragma warning(disable : 4251)
+#endif
 struct API Font {
     Font(const std::string& path = "__DEFAULT__", int size = 48);
     ~Font();
@@ -82,3 +86,6 @@ class API R13 {
 
     GLFWwindow* window;
 };
+#ifdef _MSC_VER
+#    pragma warning(pop)
+#endif

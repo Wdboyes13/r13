@@ -3,24 +3,23 @@
 #    error "This should NOT be included by files not part of R13"
 #endif
 
+#include <miniaudio.h>
+#include <memory>
 #include <string>
 #include "structs.h"
 
 class R13;
-class Font;
-
-typedef struct ma_engine ma_engine;
-typedef struct ma_sound ma_sound;
+struct Font;
 
 class Shader {
   private:
     unsigned int compile_shader(const char* source, unsigned int type);
 
-    std::string data_to_string(unsigned char* data, unsigned int len);
+    std::string data_to_string(unsigned char* data, size_t len);
 
   public:
     unsigned int id;
-    Shader(unsigned char* vert_data, unsigned int vert_data_len, unsigned char* frag_data, unsigned int frag_data_len);
+    Shader(unsigned char* vert_data, size_t vert_data_len, unsigned char* frag_data, size_t frag_data_len);
 
     ~Shader();
 

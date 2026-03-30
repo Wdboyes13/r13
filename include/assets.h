@@ -3,9 +3,12 @@
 #    error "This should NOT be included by files not part of R13"
 #endif
 
-#define DECLARE_ASSET(BUILD_ID)      \
-    extern unsigned char BUILD_ID[]; \
-    extern unsigned int BUILD_ID##_len;
+#include <stddef.h>
+#include <stdint.h>
+
+#define DECLARE_ASSET(BUILD_ID) \
+    extern uint8_t BUILD_ID[];  \
+    extern size_t BUILD_ID##_len;
 
 DECLARE_ASSET(circle_frag)
 DECLARE_ASSET(circle_vert)

@@ -8,11 +8,11 @@
 #include <stdexcept>
 #include <string>
 
-std::string Shader::data_to_string(unsigned char* data, unsigned int len) {
+std::string Shader::data_to_string(unsigned char* data, size_t len) {
     return std::string(reinterpret_cast<const char*>(data), len);
 }
 
-GLuint Shader::compile_shader(const char* source, GLenum type) {
+GLuint Shader::compile_shader(const char* source, unsigned int type) {
     GLuint shader = glCreateShader(type);
     glShaderSource(shader, 1, &source, nullptr);
     glCompileShader(shader);
@@ -27,7 +27,7 @@ GLuint Shader::compile_shader(const char* source, GLenum type) {
     return shader;
 }
 
-Shader::Shader(unsigned char* vert_data, unsigned int vert_data_len, unsigned char* frag_data, unsigned int frag_data_len) {
+Shader::Shader(unsigned char* vert_data, size_t vert_data_len, unsigned char* frag_data, size_t frag_data_len) {
     auto frag = compile_shader(data_to_string(frag_data, frag_data_len).c_str(), GL_FRAGMENT_SHADER);
     auto vert = compile_shader(data_to_string(vert_data, vert_data_len).c_str(), GL_VERTEX_SHADER);
 

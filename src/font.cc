@@ -7,6 +7,7 @@
 
 #include <fstream>
 #include <stdexcept>
+#include <vector>
 
 Font::Font(const std::string& path, int size) {
     std::vector<unsigned char> font_data;
