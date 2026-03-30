@@ -36,6 +36,40 @@ target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE GLFW_INCLUDE_NONE DLL)
 
 include(generate_package)
 
+# Doxygen documentation target
+find_package(Doxygen)
+if(DOXYGEN_FOUND)
+    set(DOXYFILE ${CMAKE_CURRENT_SOURCE_DIR}/Doxyfile)
+    
+    # Extract INPUT files from Doxyfile using regex
+    file(STRINGS ${DOXYFILE} DOXYGEN_INPUT_LINE REGEX "^INPUT\\s*=")
+    string(REGEX REPLACE "^INPUT\\s*=\\s*" "" DOXYGEN_INPUT_STRING "${DOXYGEN_INPUT_LINE}")
+    string(REPLACE " " ";" DOXYGEN_INPUT_FILES "${DOXYGEN_INPUT_STRING}")
+    
+    # Convert relative paths to absolute
+    set(DOXYGEN_INPUT_FILES_ABS "")
+    foreach(file ${DOXYGEN_INPUT_FILES})
+        if(NOT IS_ABSOLUTE ${file})
+            set(file ${CMAKE_CURRENT_SOURCE_DIR}/${file})
+        endif()
+        list(APPEND DOXYGEN_INPUT_FILES_ABS ${file})
+    endforeach()
+    
+    add_custom_command(
+        OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/docs/html/index.html
+        COMMAND ${DOXYGEN_EXECUTABLE} ${DOXYFILE}
+        WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+        DEPENDS ${DOXYFILE} ${DOXYGEN_INPUT_FILES_ABS}
+        COMMENT "Generating API documentation with Doxygen"
+        VERBATIM
+    )
+    
+    add_custom_target(
+        docs ALL
+        DEPENDS ${CMAKE_CURRENT_BINARY_DIR}/docs/html/index.html
+    )
+endif()
+
 file(GLOB PRIV_INCLUDES CONFIGURE_DEPENDS "include/r13priv/*")
 
 install(FILES include/r13.h DESTINATION include/r13)

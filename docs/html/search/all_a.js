@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['measure_0',['measure',['../struct_font.html#a186523fa4e2934b34e4af68af382253c',1,'Font']]],
-  ['measure_5ftext_1',['measure_text',['../class_r13.html#a6e26bd4427e884a5c89bc2d59b318bbc',1,'R13']]],
+  ['measure_0',['measure',['../struct_font.html#af19aaf41d5a0969602dbb3b9a895aca8',1,'Font']]],
+  ['measure_5ftext_1',['measure_text',['../class_r13.html#a64f6f3e64fa2aaf0a6dd5cbdd4ca669d',1,'R13']]],
   ['mod_5falt_2',['MOD_ALT',['../keys_8h.html#a6b2d0dbee4745049e0df5982809bd8f9',1,'keys.h']]],
   ['mod_5fcaps_5flock_3',['MOD_CAPS_LOCK',['../keys_8h.html#aca03c3b7badc5373f27bb996f690d4b8',1,'keys.h']]],
   ['mod_5fcontrol_4',['MOD_CONTROL',['../keys_8h.html#ab2812cd7de68c54439a75558e476815e',1,'keys.h']]],

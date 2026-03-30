@@ -9,6 +9,11 @@ An instance of the \doxylink{class_r13}{R13} engine This class holds and exports
 
 {\ttfamily \#include $<$r13.\+h$>$}
 
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{class_r13_a37429f4d0717e46e34deff60818e5022}{Key\+Callback}} = void (\texorpdfstring{$\ast$}{*})(\mbox{\hyperlink{r13_8h_a3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}\texorpdfstring{$\ast$}{*} window, int key, int scancode, int action, int mods)
+\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -16,7 +21,7 @@ An instance of the \doxylink{class_r13}{R13} engine This class holds and exports
 \begin{DoxyCompactList}\small\item\em Constructs and initializes an instance of the \doxylink{class_r13}{R13} engine. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_r13_abbfce674f7d0c6ef4157ca5ecbb75ce0}{\texorpdfstring{$\sim$}{\string~}\+R13}} ()
 \item 
-\mbox{\hyperlink{struct_vec2}{Vec2}} \mbox{\hyperlink{class_r13_a90a2cfcd5f495ae38fb7f2b339146f65}{get\+\_\+dimensions}} ()
+\mbox{\hyperlink{struct_vec2}{Vec2}}$<$ int $>$ \mbox{\hyperlink{class_r13_a350708a1216694f1958bbfbbdd1fc576}{get\+\_\+dimensions}} ()
 \begin{DoxyCompactList}\small\item\em Gets the dimensions of the current window. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_r13_aa9f7e8a7d7161e18ca06ec95c642f760}{begin\+\_\+draw}} (\mbox{\hyperlink{struct_color}{Color}} c)
 \begin{DoxyCompactList}\small\item\em Starts drawing to the window. \end{DoxyCompactList}\item 
@@ -24,18 +29,32 @@ void \mbox{\hyperlink{class_r13_ab982e7c5116bbca90b612264dbdd8d38}{end\+\_\+draw
 \begin{DoxyCompactList}\small\item\em Ends drawing to the window, showing the frame to the user. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_r13_a5df8c7326aff27fb66d18f090d9c9beb}{is\+\_\+key\+\_\+down}} (int k)
 \begin{DoxyCompactList}\small\item\em Reports if a key is down. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_r13_a770a89e5063850616c22533cbace503a}{is\+\_\+mouse\+\_\+button\+\_\+down}} (int b)
+\begin{DoxyCompactList}\small\item\em Reports if a mouse button is down. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_vec2}{Vec2}}$<$ double $>$ \mbox{\hyperlink{class_r13_a05cc5cf157089dafe18fac51589f236f}{get\+\_\+mouse\+\_\+pos}} ()
+\begin{DoxyCompactList}\small\item\em Gets the current position of the mouse cursor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_r13_a1e6e2d500395d66421f664f3556ac01e}{set\+\_\+key\+\_\+callback}} (\mbox{\hyperlink{class_r13_a37429f4d0717e46e34deff60818e5022}{Key\+Callback}} callback)
+\begin{DoxyCompactList}\small\item\em Sets the key callback for the window, see GLFW documentation for more details on how key callbacks work. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_r13_a300f5c9b8c68858fe238b22eb5ee56b5}{should\+\_\+close}} ()
 \begin{DoxyCompactList}\small\item\em Tells if we should close the window and cleanup the game Example usage\+: \end{DoxyCompactList}\item 
+uint64\+\_\+t \mbox{\hyperlink{class_r13_adcb32dffdce16e941024c11ccaf19577}{get\+\_\+delta\+\_\+time}} ()
+\begin{DoxyCompactList}\small\item\em Gets the time in milliseconds since the last frame, useful for framerate independent movement. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_r13_afcf9e0bd0624d1d702a229819cce68e1}{get\+\_\+fps}} ()
+\begin{DoxyCompactList}\small\item\em Gets the current framerate, useful for debugging and performance monitoring. \end{DoxyCompactList}\item 
+int64\+\_\+t \mbox{\hyperlink{class_r13_a3b1bf5b16eff825300a835a19853c50d}{get\+\_\+random}} (int64\+\_\+t min=0, int64\+\_\+t max=0)
+\begin{DoxyCompactList}\small\item\em Gets a random number between min and max, if max is 0, it will be set to the maximum value of int64\+\_\+t, and if min is 0, it will be set to the minimum value of int64\+\_\+t. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_r13_ad3912b7aeb9b7a8d386f99e7e6662361}{render\+\_\+rectangle}} (\mbox{\hyperlink{struct_rectangle}{Rectangle}} rect, \mbox{\hyperlink{struct_color}{Color}} color)
 \begin{DoxyCompactList}\small\item\em Renders a rectangle to the current frame. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_r13_af2be7b9343e6e475372432f2fe1daee2}{render\+\_\+text}} (std\+::string text, \mbox{\hyperlink{struct_vec2}{Vec2}} pos, \mbox{\hyperlink{struct_color}{Color}} color, float scale=1)
+void \mbox{\hyperlink{class_r13_a21a2e0927b94c8edbd8c532b6c066b22}{render\+\_\+text}} (std\+::string text, \mbox{\hyperlink{struct_vec2}{Vec2}}$<$ float $>$ pos, \mbox{\hyperlink{struct_color}{Color}} color, float scale=1)
 \begin{DoxyCompactList}\small\item\em Renders text using the current \doxylink{struct_font}{Font} to the current frame. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{struct_vec2}{Vec2}} \mbox{\hyperlink{class_r13_a6e26bd4427e884a5c89bc2d59b318bbc}{measure\+\_\+text}} (const std\+::string \&text, float scale=1)
+\mbox{\hyperlink{struct_vec2}{Vec2}}$<$ float $>$ \mbox{\hyperlink{class_r13_a64f6f3e64fa2aaf0a6dd5cbdd4ca669d}{measure\+\_\+text}} (const std\+::string \&text, float scale=1)
 \item 
 void \mbox{\hyperlink{class_r13_a6dd0945460704b32b5f8150e91c64e42}{set\+\_\+font\+\_\+text}} (const \mbox{\hyperlink{struct_font}{Font}} \&f)
 \begin{DoxyCompactList}\small\item\em Sets the font to use. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_r13_afbe8b6927f3ee99dfe45b8392269a326}{render\+\_\+circle}} (\mbox{\hyperlink{struct_vec2}{Vec2}} center, float radius, \mbox{\hyperlink{struct_color}{Color}} color)
+void \mbox{\hyperlink{class_r13_adefb8fe71f4ecad0c47ff4b149b8a9a2}{render\+\_\+circle}} (\mbox{\hyperlink{struct_vec2}{Vec2}}$<$ float $>$ center, float radius, \mbox{\hyperlink{struct_color}{Color}} color)
 \begin{DoxyCompactList}\small\item\em Renders a circle to the current frame. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_r13_a0a4db863009c33bb49ecdf47ae4234a2}{render\+\_\+line}} (\mbox{\hyperlink{struct_line}{Line}} line, \mbox{\hyperlink{struct_color}{Color}} color)
+\begin{DoxyCompactList}\small\item\em Renders a line to the current frame. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_r13_aa59f4674e9d423ada3b77de50d8e9a13}{load\+\_\+file\+\_\+audio}} (const std\+::string \&path)
 \begin{DoxyCompactList}\small\item\em Loads an audio file. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_r13_a570d3d3e84b8be3abf7085b31f952d1c}{play\+\_\+audio}} ()
@@ -47,7 +66,9 @@ void \mbox{\hyperlink{class_r13_ac0df94fd69e90251a083dda1f98809be}{stop\+\_\+aud
 void \mbox{\hyperlink{class_r13_aedf20a66583bc50ee325fe8d1b85008c}{loop\+\_\+audio}} ()
 \begin{DoxyCompactList}\small\item\em Sets the current audio file to loop. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_r13_adc82246133598ba9b67660452cb091fb}{unloop\+\_\+audio}} ()
-\begin{DoxyCompactList}\small\item\em Sets the current audio file to not loop. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Sets the current audio file to not loop. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_r13_aca126671b1e6adbeae324a6616b2f978}{set\+\_\+volume\+\_\+audio}} (float volume)
+\begin{DoxyCompactList}\small\item\em Sets the volume of the current audio file, from 0 to 1. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -91,6 +112,17 @@ Example usage\+:
 
 \end{DoxyCode}
  
+
+\label{doc-typedef-members}
+\Hypertarget{class_r13_doc-typedef-members}
+\doxysubsection{Member Typedef Documentation}
+\Hypertarget{class_r13_a37429f4d0717e46e34deff60818e5022}\index{R13@{R13}!KeyCallback@{KeyCallback}}
+\index{KeyCallback@{KeyCallback}!R13@{R13}}
+\doxysubsubsection{\texorpdfstring{KeyCallback}{KeyCallback}}
+{\footnotesize\ttfamily \label{class_r13_a37429f4d0717e46e34deff60818e5022} 
+using \mbox{\hyperlink{class_r13_a37429f4d0717e46e34deff60818e5022}{R13\+::\+Key\+Callback}} = void (\texorpdfstring{$\ast$}{*})(\mbox{\hyperlink{r13_8h_a3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}\texorpdfstring{$\ast$}{*} window, int key, int scancode, int action, int mods)}
+
+
 
 \label{doc-constructors}
 \Hypertarget{class_r13_doc-constructors}
@@ -157,11 +189,21 @@ void R13\+::end\+\_\+draw (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
 Ends drawing to the window, showing the frame to the user. 
 
-\Hypertarget{class_r13_a90a2cfcd5f495ae38fb7f2b339146f65}\index{R13@{R13}!get\_dimensions@{get\_dimensions}}
+\Hypertarget{class_r13_adcb32dffdce16e941024c11ccaf19577}\index{R13@{R13}!get\_delta\_time@{get\_delta\_time}}
+\index{get\_delta\_time@{get\_delta\_time}!R13@{R13}}
+\doxysubsubsection{\texorpdfstring{get\_delta\_time()}{get\_delta\_time()}}
+{\footnotesize\ttfamily \label{class_r13_adcb32dffdce16e941024c11ccaf19577} 
+uint64\+\_\+t R13\+::get\+\_\+delta\+\_\+time (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Gets the time in milliseconds since the last frame, useful for framerate independent movement. 
+
+\Hypertarget{class_r13_a350708a1216694f1958bbfbbdd1fc576}\index{R13@{R13}!get\_dimensions@{get\_dimensions}}
 \index{get\_dimensions@{get\_dimensions}!R13@{R13}}
 \doxysubsubsection{\texorpdfstring{get\_dimensions()}{get\_dimensions()}}
-{\footnotesize\ttfamily \label{class_r13_a90a2cfcd5f495ae38fb7f2b339146f65} 
-\mbox{\hyperlink{struct_vec2}{Vec2}} R13\+::get\+\_\+dimensions (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{class_r13_a350708a1216694f1958bbfbbdd1fc576} 
+\mbox{\hyperlink{struct_vec2}{Vec2}}$<$ int $>$ R13\+::get\+\_\+dimensions (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
 
 
@@ -170,6 +212,36 @@ Gets the dimensions of the current window.
 \begin{DoxyReturn}{Returns}
 a \doxylink{struct_vec2}{Vec2} containing the current window size 
 \end{DoxyReturn}
+\Hypertarget{class_r13_afcf9e0bd0624d1d702a229819cce68e1}\index{R13@{R13}!get\_fps@{get\_fps}}
+\index{get\_fps@{get\_fps}!R13@{R13}}
+\doxysubsubsection{\texorpdfstring{get\_fps()}{get\_fps()}}
+{\footnotesize\ttfamily \label{class_r13_afcf9e0bd0624d1d702a229819cce68e1} 
+int R13\+::get\+\_\+fps (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Gets the current framerate, useful for debugging and performance monitoring. 
+
+\Hypertarget{class_r13_a05cc5cf157089dafe18fac51589f236f}\index{R13@{R13}!get\_mouse\_pos@{get\_mouse\_pos}}
+\index{get\_mouse\_pos@{get\_mouse\_pos}!R13@{R13}}
+\doxysubsubsection{\texorpdfstring{get\_mouse\_pos()}{get\_mouse\_pos()}}
+{\footnotesize\ttfamily \label{class_r13_a05cc5cf157089dafe18fac51589f236f} 
+\mbox{\hyperlink{struct_vec2}{Vec2}}$<$ double $>$ R13\+::get\+\_\+mouse\+\_\+pos (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Gets the current position of the mouse cursor. 
+
+\Hypertarget{class_r13_a3b1bf5b16eff825300a835a19853c50d}\index{R13@{R13}!get\_random@{get\_random}}
+\index{get\_random@{get\_random}!R13@{R13}}
+\doxysubsubsection{\texorpdfstring{get\_random()}{get\_random()}}
+{\footnotesize\ttfamily \label{class_r13_a3b1bf5b16eff825300a835a19853c50d} 
+int64\+\_\+t R13\+::get\+\_\+random (\begin{DoxyParamCaption}\item[{int64\+\_\+t}]{min}{ = {\ttfamily 0}, }\item[{int64\+\_\+t}]{max}{ = {\ttfamily 0}}\end{DoxyParamCaption})}
+
+
+
+Gets a random number between min and max, if max is 0, it will be set to the maximum value of int64\+\_\+t, and if min is 0, it will be set to the minimum value of int64\+\_\+t. 
+
 \Hypertarget{class_r13_a5df8c7326aff27fb66d18f090d9c9beb}\index{R13@{R13}!is\_key\_down@{is\_key\_down}}
 \index{is\_key\_down@{is\_key\_down}!R13@{R13}}
 \doxysubsubsection{\texorpdfstring{is\_key\_down()}{is\_key\_down()}}
@@ -187,6 +259,24 @@ Reports if a key is down.
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 a bool reporting if the key "{}k"{} is currently down 
+\end{DoxyReturn}
+\Hypertarget{class_r13_a770a89e5063850616c22533cbace503a}\index{R13@{R13}!is\_mouse\_button\_down@{is\_mouse\_button\_down}}
+\index{is\_mouse\_button\_down@{is\_mouse\_button\_down}!R13@{R13}}
+\doxysubsubsection{\texorpdfstring{is\_mouse\_button\_down()}{is\_mouse\_button\_down()}}
+{\footnotesize\ttfamily \label{class_r13_a770a89e5063850616c22533cbace503a} 
+bool R13\+::is\+\_\+mouse\+\_\+button\+\_\+down (\begin{DoxyParamCaption}\item[{int}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Reports if a mouse button is down. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & The mouse button to check \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a bool reporting if the mouse button "{}b"{} is currently down 
 \end{DoxyReturn}
 \Hypertarget{class_r13_aa59f4674e9d423ada3b77de50d8e9a13}\index{R13@{R13}!load\_file\_audio@{load\_file\_audio}}
 \index{load\_file\_audio@{load\_file\_audio}!R13@{R13}}
@@ -216,14 +306,14 @@ void R13\+::loop\+\_\+audio (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})
 
 Sets the current audio file to loop. 
 
-\Hypertarget{class_r13_a6e26bd4427e884a5c89bc2d59b318bbc}\index{R13@{R13}!measure\_text@{measure\_text}}
+\Hypertarget{class_r13_a64f6f3e64fa2aaf0a6dd5cbdd4ca669d}\index{R13@{R13}!measure\_text@{measure\_text}}
 \index{measure\_text@{measure\_text}!R13@{R13}}
 \doxysubsubsection{\texorpdfstring{measure\_text()}{measure\_text()}}
-{\footnotesize\ttfamily \label{class_r13_a6e26bd4427e884a5c89bc2d59b318bbc} 
-\mbox{\hyperlink{struct_vec2}{Vec2}} R13\+::measure\+\_\+text (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{text}{, }\item[{float}]{scale}{ = {\ttfamily 1}}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{class_r13_a64f6f3e64fa2aaf0a6dd5cbdd4ca669d} 
+\mbox{\hyperlink{struct_vec2}{Vec2}}$<$ float $>$ R13\+::measure\+\_\+text (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{text}{, }\item[{float}]{scale}{ = {\ttfamily 1}}\end{DoxyParamCaption})}
 
 \begin{DoxySeeAlso}{See also}
-\doxylink{struct_font_a186523fa4e2934b34e4af68af382253c}{Font\+::measure} 
+\doxylink{struct_font_af19aaf41d5a0969602dbb3b9a895aca8}{Font\+::measure} 
 \end{DoxySeeAlso}
 \Hypertarget{class_r13_ab7f454e26b41326af95431dd42222b07}\index{R13@{R13}!pause\_audio@{pause\_audio}}
 \index{pause\_audio@{pause\_audio}!R13@{R13}}
@@ -245,11 +335,11 @@ void R13\+::play\+\_\+audio (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})
 
 Starts playing or unpauses the current audio file. 
 
-\Hypertarget{class_r13_afbe8b6927f3ee99dfe45b8392269a326}\index{R13@{R13}!render\_circle@{render\_circle}}
+\Hypertarget{class_r13_adefb8fe71f4ecad0c47ff4b149b8a9a2}\index{R13@{R13}!render\_circle@{render\_circle}}
 \index{render\_circle@{render\_circle}!R13@{R13}}
 \doxysubsubsection{\texorpdfstring{render\_circle()}{render\_circle()}}
-{\footnotesize\ttfamily \label{class_r13_afbe8b6927f3ee99dfe45b8392269a326} 
-void R13\+::render\+\_\+circle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_vec2}{Vec2}}}]{center}{, }\item[{float}]{radius}{, }\item[{\mbox{\hyperlink{struct_color}{Color}}}]{color}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{class_r13_adefb8fe71f4ecad0c47ff4b149b8a9a2} 
+void R13\+::render\+\_\+circle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_vec2}{Vec2}}$<$ float $>$}]{center}{, }\item[{float}]{radius}{, }\item[{\mbox{\hyperlink{struct_color}{Color}}}]{color}{}\end{DoxyParamCaption})}
 
 
 
@@ -262,6 +352,23 @@ Renders a circle to the current frame.
 {\em radius} & The radius of the circle to render \\
 \hline
 {\em color} & The colour to render the circle as \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_r13_a0a4db863009c33bb49ecdf47ae4234a2}\index{R13@{R13}!render\_line@{render\_line}}
+\index{render\_line@{render\_line}!R13@{R13}}
+\doxysubsubsection{\texorpdfstring{render\_line()}{render\_line()}}
+{\footnotesize\ttfamily \label{class_r13_a0a4db863009c33bb49ecdf47ae4234a2} 
+void R13\+::render\+\_\+line (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_line}{Line}}}]{line}{, }\item[{\mbox{\hyperlink{struct_color}{Color}}}]{color}{}\end{DoxyParamCaption})}
+
+
+
+Renders a line to the current frame. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em line} & The line to render \\
+\hline
+{\em color} & The colour to render the line as \\
 \hline
 \end{DoxyParams}
 \Hypertarget{class_r13_ad3912b7aeb9b7a8d386f99e7e6662361}\index{R13@{R13}!render\_rectangle@{render\_rectangle}}
@@ -281,11 +388,11 @@ Renders a rectangle to the current frame.
 {\em color} & The colour of the rectangle to render \\
 \hline
 \end{DoxyParams}
-\Hypertarget{class_r13_af2be7b9343e6e475372432f2fe1daee2}\index{R13@{R13}!render\_text@{render\_text}}
+\Hypertarget{class_r13_a21a2e0927b94c8edbd8c532b6c066b22}\index{R13@{R13}!render\_text@{render\_text}}
 \index{render\_text@{render\_text}!R13@{R13}}
 \doxysubsubsection{\texorpdfstring{render\_text()}{render\_text()}}
-{\footnotesize\ttfamily \label{class_r13_af2be7b9343e6e475372432f2fe1daee2} 
-void R13\+::render\+\_\+text (\begin{DoxyParamCaption}\item[{std\+::string}]{text}{, }\item[{\mbox{\hyperlink{struct_vec2}{Vec2}}}]{pos}{, }\item[{\mbox{\hyperlink{struct_color}{Color}}}]{color}{, }\item[{float}]{scale}{ = {\ttfamily 1}}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{class_r13_a21a2e0927b94c8edbd8c532b6c066b22} 
+void R13\+::render\+\_\+text (\begin{DoxyParamCaption}\item[{std\+::string}]{text}{, }\item[{\mbox{\hyperlink{struct_vec2}{Vec2}}$<$ float $>$}]{pos}{, }\item[{\mbox{\hyperlink{struct_color}{Color}}}]{color}{, }\item[{float}]{scale}{ = {\ttfamily 1}}\end{DoxyParamCaption})}
 
 
 
@@ -320,6 +427,26 @@ Sets the font to use.
 \begin{DoxyNote}{Note}
 This function copies the entire font data to a separate instance 
 \end{DoxyNote}
+\Hypertarget{class_r13_a1e6e2d500395d66421f664f3556ac01e}\index{R13@{R13}!set\_key\_callback@{set\_key\_callback}}
+\index{set\_key\_callback@{set\_key\_callback}!R13@{R13}}
+\doxysubsubsection{\texorpdfstring{set\_key\_callback()}{set\_key\_callback()}}
+{\footnotesize\ttfamily \label{class_r13_a1e6e2d500395d66421f664f3556ac01e} 
+void R13\+::set\+\_\+key\+\_\+callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_r13_a37429f4d0717e46e34deff60818e5022}{Key\+Callback}}}]{callback}{}\end{DoxyParamCaption})}
+
+
+
+Sets the key callback for the window, see GLFW documentation for more details on how key callbacks work. 
+
+\Hypertarget{class_r13_aca126671b1e6adbeae324a6616b2f978}\index{R13@{R13}!set\_volume\_audio@{set\_volume\_audio}}
+\index{set\_volume\_audio@{set\_volume\_audio}!R13@{R13}}
+\doxysubsubsection{\texorpdfstring{set\_volume\_audio()}{set\_volume\_audio()}}
+{\footnotesize\ttfamily \label{class_r13_aca126671b1e6adbeae324a6616b2f978} 
+void R13\+::set\+\_\+volume\+\_\+audio (\begin{DoxyParamCaption}\item[{float}]{volume}{}\end{DoxyParamCaption})}
+
+
+
+Sets the volume of the current audio file, from 0 to 1. 
+
 \Hypertarget{class_r13_a300f5c9b8c68858fe238b22eb5ee56b5}\index{R13@{R13}!should\_close@{should\_close}}
 \index{should\_close@{should\_close}!R13@{R13}}
 \doxysubsubsection{\texorpdfstring{should\_close()}{should\_close()}}

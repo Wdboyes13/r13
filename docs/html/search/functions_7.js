@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['operator_20vec4_0',['operator Vec4',['../struct_color.html#a25c7d87c0e322d7ee70e2123cce2bc91',1,'Color']]]
+  ['operator_20vec4_3c_20float_20_3e_0',['operator Vec4&lt; float &gt;',['../struct_color.html#a00e089b4a3037b3a9381e829e2619fbf',1,'Color']]]
 ];

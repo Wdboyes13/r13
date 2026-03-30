@@ -97,30 +97,48 @@ $(function(){initNavTree('class_r13.html','','class_r13-members'); });
 
 <p><code>#include &lt;<a class="el" href="r13_8h_source.html">r13.h</a>&gt;</code></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-types" class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:a37429f4d0717e46e34deff60818e5022" id="r_a37429f4d0717e46e34deff60818e5022"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a37429f4d0717e46e34deff60818e5022">KeyCallback</a> = void (*)(<a class="el" href="r13_8h.html#a3c96d80d363e67d13a41b5d1821f3242">GLFWwindow</a>* window, int key, int scancode, int action, int mods)</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a73e984cc242b75b9e55fe25e26fbad6d" id="r_a73e984cc242b75b9e55fe25e26fbad6d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a73e984cc242b75b9e55fe25e26fbad6d">R13</a> (int width, int height, int font_size=48)</td></tr>
 <tr class="memdesc:a73e984cc242b75b9e55fe25e26fbad6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs and initializes an instance of the <a class="el" href="class_r13.html" title="An instance of the R13 engine This class holds and exports functions/instances of fonts,...">R13</a> engine.  <br /></td></tr>
 <tr class="memitem:abbfce674f7d0c6ef4157ca5ecbb75ce0" id="r_abbfce674f7d0c6ef4157ca5ecbb75ce0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abbfce674f7d0c6ef4157ca5ecbb75ce0">~R13</a> ()</td></tr>
-<tr class="memitem:a90a2cfcd5f495ae38fb7f2b339146f65" id="r_a90a2cfcd5f495ae38fb7f2b339146f65"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_vec2.html">Vec2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a90a2cfcd5f495ae38fb7f2b339146f65">get_dimensions</a> ()</td></tr>
-<tr class="memdesc:a90a2cfcd5f495ae38fb7f2b339146f65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the dimensions of the current window.  <br /></td></tr>
+<tr class="memitem:a350708a1216694f1958bbfbbdd1fc576" id="r_a350708a1216694f1958bbfbbdd1fc576"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_vec2.html">Vec2</a>&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a350708a1216694f1958bbfbbdd1fc576">get_dimensions</a> ()</td></tr>
+<tr class="memdesc:a350708a1216694f1958bbfbbdd1fc576"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the dimensions of the current window.  <br /></td></tr>
 <tr class="memitem:aa9f7e8a7d7161e18ca06ec95c642f760" id="r_aa9f7e8a7d7161e18ca06ec95c642f760"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa9f7e8a7d7161e18ca06ec95c642f760">begin_draw</a> (<a class="el" href="struct_color.html">Color</a> c)</td></tr>
 <tr class="memdesc:aa9f7e8a7d7161e18ca06ec95c642f760"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts drawing to the window.  <br /></td></tr>
 <tr class="memitem:ab982e7c5116bbca90b612264dbdd8d38" id="r_ab982e7c5116bbca90b612264dbdd8d38"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab982e7c5116bbca90b612264dbdd8d38">end_draw</a> ()</td></tr>
 <tr class="memdesc:ab982e7c5116bbca90b612264dbdd8d38"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ends drawing to the window, showing the frame to the user.  <br /></td></tr>
 <tr class="memitem:a5df8c7326aff27fb66d18f090d9c9beb" id="r_a5df8c7326aff27fb66d18f090d9c9beb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5df8c7326aff27fb66d18f090d9c9beb">is_key_down</a> (int k)</td></tr>
 <tr class="memdesc:a5df8c7326aff27fb66d18f090d9c9beb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reports if a key is down.  <br /></td></tr>
+<tr class="memitem:a770a89e5063850616c22533cbace503a" id="r_a770a89e5063850616c22533cbace503a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a770a89e5063850616c22533cbace503a">is_mouse_button_down</a> (int b)</td></tr>
+<tr class="memdesc:a770a89e5063850616c22533cbace503a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reports if a mouse button is down.  <br /></td></tr>
+<tr class="memitem:a05cc5cf157089dafe18fac51589f236f" id="r_a05cc5cf157089dafe18fac51589f236f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_vec2.html">Vec2</a>&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a05cc5cf157089dafe18fac51589f236f">get_mouse_pos</a> ()</td></tr>
+<tr class="memdesc:a05cc5cf157089dafe18fac51589f236f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the current position of the mouse cursor.  <br /></td></tr>
+<tr class="memitem:a1e6e2d500395d66421f664f3556ac01e" id="r_a1e6e2d500395d66421f664f3556ac01e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1e6e2d500395d66421f664f3556ac01e">set_key_callback</a> (<a class="el" href="#a37429f4d0717e46e34deff60818e5022">KeyCallback</a> callback)</td></tr>
+<tr class="memdesc:a1e6e2d500395d66421f664f3556ac01e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the key callback for the window, see GLFW documentation for more details on how key callbacks work.  <br /></td></tr>
 <tr class="memitem:a300f5c9b8c68858fe238b22eb5ee56b5" id="r_a300f5c9b8c68858fe238b22eb5ee56b5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a300f5c9b8c68858fe238b22eb5ee56b5">should_close</a> ()</td></tr>
 <tr class="memdesc:a300f5c9b8c68858fe238b22eb5ee56b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tells if we should close the window and cleanup the game Example usage:  <br /></td></tr>
+<tr class="memitem:adcb32dffdce16e941024c11ccaf19577" id="r_adcb32dffdce16e941024c11ccaf19577"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adcb32dffdce16e941024c11ccaf19577">get_delta_time</a> ()</td></tr>
+<tr class="memdesc:adcb32dffdce16e941024c11ccaf19577"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the time in milliseconds since the last frame, useful for framerate independent movement.  <br /></td></tr>
+<tr class="memitem:afcf9e0bd0624d1d702a229819cce68e1" id="r_afcf9e0bd0624d1d702a229819cce68e1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afcf9e0bd0624d1d702a229819cce68e1">get_fps</a> ()</td></tr>
+<tr class="memdesc:afcf9e0bd0624d1d702a229819cce68e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the current framerate, useful for debugging and performance monitoring.  <br /></td></tr>
+<tr class="memitem:a3b1bf5b16eff825300a835a19853c50d" id="r_a3b1bf5b16eff825300a835a19853c50d"><td class="memItemLeft" align="right" valign="top">int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3b1bf5b16eff825300a835a19853c50d">get_random</a> (int64_t min=0, int64_t max=0)</td></tr>
+<tr class="memdesc:a3b1bf5b16eff825300a835a19853c50d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a random number between min and max, if max is 0, it will be set to the maximum value of int64_t, and if min is 0, it will be set to the minimum value of int64_t.  <br /></td></tr>
 <tr class="memitem:ad3912b7aeb9b7a8d386f99e7e6662361" id="r_ad3912b7aeb9b7a8d386f99e7e6662361"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad3912b7aeb9b7a8d386f99e7e6662361">render_rectangle</a> (<a class="el" href="struct_rectangle.html">Rectangle</a> rect, <a class="el" href="struct_color.html">Color</a> color)</td></tr>
 <tr class="memdesc:ad3912b7aeb9b7a8d386f99e7e6662361"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders a rectangle to the current frame.  <br /></td></tr>
-<tr class="memitem:af2be7b9343e6e475372432f2fe1daee2" id="r_af2be7b9343e6e475372432f2fe1daee2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af2be7b9343e6e475372432f2fe1daee2">render_text</a> (std::string text, <a class="el" href="struct_vec2.html">Vec2</a> pos, <a class="el" href="struct_color.html">Color</a> color, float scale=1)</td></tr>
-<tr class="memdesc:af2be7b9343e6e475372432f2fe1daee2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders text using the current <a class="el" href="struct_font.html" title="A struct containing data for a font This font struct is to use and load fonts the default font is the...">Font</a> to the current frame.  <br /></td></tr>
-<tr class="memitem:a6e26bd4427e884a5c89bc2d59b318bbc" id="r_a6e26bd4427e884a5c89bc2d59b318bbc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_vec2.html">Vec2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6e26bd4427e884a5c89bc2d59b318bbc">measure_text</a> (const std::string &amp;text, float scale=1)</td></tr>
+<tr class="memitem:a21a2e0927b94c8edbd8c532b6c066b22" id="r_a21a2e0927b94c8edbd8c532b6c066b22"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a21a2e0927b94c8edbd8c532b6c066b22">render_text</a> (std::string text, <a class="el" href="struct_vec2.html">Vec2</a>&lt; float &gt; pos, <a class="el" href="struct_color.html">Color</a> color, float scale=1)</td></tr>
+<tr class="memdesc:a21a2e0927b94c8edbd8c532b6c066b22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders text using the current <a class="el" href="struct_font.html" title="A struct containing data for a font This font struct is to use and load fonts the default font is the...">Font</a> to the current frame.  <br /></td></tr>
+<tr class="memitem:a64f6f3e64fa2aaf0a6dd5cbdd4ca669d" id="r_a64f6f3e64fa2aaf0a6dd5cbdd4ca669d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_vec2.html">Vec2</a>&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a64f6f3e64fa2aaf0a6dd5cbdd4ca669d">measure_text</a> (const std::string &amp;text, float scale=1)</td></tr>
 <tr class="memitem:a6dd0945460704b32b5f8150e91c64e42" id="r_a6dd0945460704b32b5f8150e91c64e42"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6dd0945460704b32b5f8150e91c64e42">set_font_text</a> (const <a class="el" href="struct_font.html">Font</a> &amp;f)</td></tr>
 <tr class="memdesc:a6dd0945460704b32b5f8150e91c64e42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the font to use.  <br /></td></tr>
-<tr class="memitem:afbe8b6927f3ee99dfe45b8392269a326" id="r_afbe8b6927f3ee99dfe45b8392269a326"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afbe8b6927f3ee99dfe45b8392269a326">render_circle</a> (<a class="el" href="struct_vec2.html">Vec2</a> center, float radius, <a class="el" href="struct_color.html">Color</a> color)</td></tr>
-<tr class="memdesc:afbe8b6927f3ee99dfe45b8392269a326"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders a circle to the current frame.  <br /></td></tr>
+<tr class="memitem:adefb8fe71f4ecad0c47ff4b149b8a9a2" id="r_adefb8fe71f4ecad0c47ff4b149b8a9a2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adefb8fe71f4ecad0c47ff4b149b8a9a2">render_circle</a> (<a class="el" href="struct_vec2.html">Vec2</a>&lt; float &gt; center, float radius, <a class="el" href="struct_color.html">Color</a> color)</td></tr>
+<tr class="memdesc:adefb8fe71f4ecad0c47ff4b149b8a9a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders a circle to the current frame.  <br /></td></tr>
+<tr class="memitem:a0a4db863009c33bb49ecdf47ae4234a2" id="r_a0a4db863009c33bb49ecdf47ae4234a2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0a4db863009c33bb49ecdf47ae4234a2">render_line</a> (<a class="el" href="struct_line.html">Line</a> line, <a class="el" href="struct_color.html">Color</a> color)</td></tr>
+<tr class="memdesc:a0a4db863009c33bb49ecdf47ae4234a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders a line to the current frame.  <br /></td></tr>
 <tr class="memitem:aa59f4674e9d423ada3b77de50d8e9a13" id="r_aa59f4674e9d423ada3b77de50d8e9a13"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa59f4674e9d423ada3b77de50d8e9a13">load_file_audio</a> (const std::string &amp;path)</td></tr>
 <tr class="memdesc:aa59f4674e9d423ada3b77de50d8e9a13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads an audio file.  <br /></td></tr>
 <tr class="memitem:a570d3d3e84b8be3abf7085b31f952d1c" id="r_a570d3d3e84b8be3abf7085b31f952d1c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a570d3d3e84b8be3abf7085b31f952d1c">play_audio</a> ()</td></tr>
@@ -133,6 +151,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:aedf20a66583bc50ee325fe8d1b85008c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the current audio file to loop.  <br /></td></tr>
 <tr class="memitem:adc82246133598ba9b67660452cb091fb" id="r_adc82246133598ba9b67660452cb091fb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adc82246133598ba9b67660452cb091fb">unloop_audio</a> ()</td></tr>
 <tr class="memdesc:adc82246133598ba9b67660452cb091fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the current audio file to not loop.  <br /></td></tr>
+<tr class="memitem:aca126671b1e6adbeae324a6616b2f978" id="r_aca126671b1e6adbeae324a6616b2f978"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aca126671b1e6adbeae324a6616b2f978">set_volume_audio</a> (float volume)</td></tr>
+<tr class="memdesc:aca126671b1e6adbeae324a6616b2f978"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the volume of the current audio file, from 0 to 1.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>An instance of the <a class="el" href="class_r13.html" title="An instance of the R13 engine This class holds and exports functions/instances of fonts,...">R13</a> engine This class holds and exports functions/instances of fonts, renderers, and audio objects it also manages the OpenGL, GLFW, and GLAD contexts, offering various mechanisms to control them. </p>
@@ -174,10 +194,25 @@ Public Member Functions</h2></td></tr>
 <div class="ttc" id="akeys_8h_html_a6f09e2899747f5db41369ce1dae11ebd"><div class="ttname"><a href="keys_8h.html#a6f09e2899747f5db41369ce1dae11ebd">KEY_S</a></div><div class="ttdeci">#define KEY_S</div><div class="ttdef"><b>Definition</b> keys.h:49</div></div>
 <div class="ttc" id="akeys_8h_html_ad2017b35fcff527a10050ab7c9af2d5c"><div class="ttname"><a href="keys_8h.html#ad2017b35fcff527a10050ab7c9af2d5c">KEY_D</a></div><div class="ttdeci">#define KEY_D</div><div class="ttdef"><b>Definition</b> keys.h:34</div></div>
 <div class="ttc" id="akeys_8h_html_afdebd5d771ee260c703a74f459767c09"><div class="ttname"><a href="keys_8h.html#afdebd5d771ee260c703a74f459767c09">KEY_W</a></div><div class="ttdeci">#define KEY_W</div><div class="ttdef"><b>Definition</b> keys.h:53</div></div>
-<div class="ttc" id="astruct_rectangle_html"><div class="ttname"><a href="struct_rectangle.html">Rectangle</a></div><div class="ttdef"><b>Definition</b> structs.h:45</div></div>
-<div class="ttc" id="astruct_rectangle_html_a40917b61b33bf046d189be401c13cc7f"><div class="ttname"><a href="struct_rectangle.html#a40917b61b33bf046d189be401c13cc7f">Rectangle::x</a></div><div class="ttdeci">float x</div><div class="ttdoc">The x position of the rectangle.</div><div class="ttdef"><b>Definition</b> structs.h:46</div></div>
-<div class="ttc" id="astruct_rectangle_html_a86f71f891bada4e5e920a4a9b7c505a3"><div class="ttname"><a href="struct_rectangle.html#a86f71f891bada4e5e920a4a9b7c505a3">Rectangle::y</a></div><div class="ttdeci">float y</div><div class="ttdoc">The y position of the rectangle.</div><div class="ttdef"><b>Definition</b> structs.h:47</div></div>
-</div><!-- fragment --> </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<div class="ttc" id="astruct_rectangle_html"><div class="ttname"><a href="struct_rectangle.html">Rectangle</a></div><div class="ttdef"><b>Definition</b> structs.h:44</div></div>
+<div class="ttc" id="astruct_rectangle_html_a40917b61b33bf046d189be401c13cc7f"><div class="ttname"><a href="struct_rectangle.html#a40917b61b33bf046d189be401c13cc7f">Rectangle::x</a></div><div class="ttdeci">float x</div><div class="ttdoc">The x position of the rectangle.</div><div class="ttdef"><b>Definition</b> structs.h:45</div></div>
+<div class="ttc" id="astruct_rectangle_html_a86f71f891bada4e5e920a4a9b7c505a3"><div class="ttname"><a href="struct_rectangle.html#a86f71f891bada4e5e920a4a9b7c505a3">Rectangle::y</a></div><div class="ttdeci">float y</div><div class="ttdoc">The y position of the rectangle.</div><div class="ttdef"><b>Definition</b> structs.h:46</div></div>
+</div><!-- fragment --> </div><a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Member Typedef Documentation</h2>
+<a id="a37429f4d0717e46e34deff60818e5022" name="a37429f4d0717e46e34deff60818e5022"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37429f4d0717e46e34deff60818e5022">&#9670;&#160;</a></span>KeyCallback</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="#a37429f4d0717e46e34deff60818e5022">R13::KeyCallback</a> = void (*)(<a class="el" href="r13_8h.html#a3c96d80d363e67d13a41b5d1821f3242">GLFWwindow</a>* window, int key, int scancode, int action, int mods)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a73e984cc242b75b9e55fe25e26fbad6d" name="a73e984cc242b75b9e55fe25e26fbad6d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a73e984cc242b75b9e55fe25e26fbad6d">&#9670;&#160;</a></span>R13()</h2>
 
@@ -283,14 +318,33 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a90a2cfcd5f495ae38fb7f2b339146f65" name="a90a2cfcd5f495ae38fb7f2b339146f65"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a90a2cfcd5f495ae38fb7f2b339146f65">&#9670;&#160;</a></span>get_dimensions()</h2>
+<a id="adcb32dffdce16e941024c11ccaf19577" name="adcb32dffdce16e941024c11ccaf19577"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adcb32dffdce16e941024c11ccaf19577">&#9670;&#160;</a></span>get_delta_time()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="struct_vec2.html">Vec2</a> R13::get_dimensions </td>
+          <td class="memname">uint64_t R13::get_delta_time </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the time in milliseconds since the last frame, useful for framerate independent movement. </p>
+
+</div>
+</div>
+<a id="a350708a1216694f1958bbfbbdd1fc576" name="a350708a1216694f1958bbfbbdd1fc576"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a350708a1216694f1958bbfbbdd1fc576">&#9670;&#160;</a></span>get_dimensions()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_vec2.html">Vec2</a>&lt; int &gt; R13::get_dimensions </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
@@ -300,6 +354,67 @@ Public Member Functions</h2></td></tr>
 
 <p>Gets the dimensions of the current window. </p>
 <dl class="section return"><dt>Returns</dt><dd>a <a class="el" href="struct_vec2.html" title="A 2-element vector of floats.">Vec2</a> containing the current window size </dd></dl>
+
+</div>
+</div>
+<a id="afcf9e0bd0624d1d702a229819cce68e1" name="afcf9e0bd0624d1d702a229819cce68e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afcf9e0bd0624d1d702a229819cce68e1">&#9670;&#160;</a></span>get_fps()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int R13::get_fps </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the current framerate, useful for debugging and performance monitoring. </p>
+
+</div>
+</div>
+<a id="a05cc5cf157089dafe18fac51589f236f" name="a05cc5cf157089dafe18fac51589f236f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05cc5cf157089dafe18fac51589f236f">&#9670;&#160;</a></span>get_mouse_pos()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_vec2.html">Vec2</a>&lt; double &gt; R13::get_mouse_pos </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the current position of the mouse cursor. </p>
+
+</div>
+</div>
+<a id="a3b1bf5b16eff825300a835a19853c50d" name="a3b1bf5b16eff825300a835a19853c50d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b1bf5b16eff825300a835a19853c50d">&#9670;&#160;</a></span>get_random()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int64_t R13::get_random </td>
+          <td>(</td>
+          <td class="paramtype">int64_t</td>          <td class="paramname"><span class="paramname"><em>min</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int64_t</td>          <td class="paramname"><span class="paramname"><em>max</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets a random number between min and max, if max is 0, it will be set to the maximum value of int64_t, and if min is 0, it will be set to the minimum value of int64_t. </p>
 
 </div>
 </div>
@@ -326,6 +441,32 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>a bool reporting if the key "k" is currently down </dd></dl>
+
+</div>
+</div>
+<a id="a770a89e5063850616c22533cbace503a" name="a770a89e5063850616c22533cbace503a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a770a89e5063850616c22533cbace503a">&#9670;&#160;</a></span>is_mouse_button_down()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool R13::is_mouse_button_down </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>b</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reports if a mouse button is down. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">b</td><td>The mouse button to check </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>a bool reporting if the mouse button "b" is currently down </dd></dl>
 
 </div>
 </div>
@@ -374,14 +515,14 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a6e26bd4427e884a5c89bc2d59b318bbc" name="a6e26bd4427e884a5c89bc2d59b318bbc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6e26bd4427e884a5c89bc2d59b318bbc">&#9670;&#160;</a></span>measure_text()</h2>
+<a id="a64f6f3e64fa2aaf0a6dd5cbdd4ca669d" name="a64f6f3e64fa2aaf0a6dd5cbdd4ca669d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64f6f3e64fa2aaf0a6dd5cbdd4ca669d">&#9670;&#160;</a></span>measure_text()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="struct_vec2.html">Vec2</a> R13::measure_text </td>
+          <td class="memname"><a class="el" href="struct_vec2.html">Vec2</a>&lt; float &gt; R13::measure_text </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>text</em></span>, </td>
         </tr>
@@ -392,7 +533,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="struct_font.html#a186523fa4e2934b34e4af68af382253c" title="Returns the size of &quot;text&quot; when using this Font at &quot;scale&quot;.">Font::measure</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="struct_font.html#af19aaf41d5a0969602dbb3b9a895aca8" title="Returns the size of &quot;text&quot; when using this Font at &quot;scale&quot;.">Font::measure</a> </dd></dl>
 
 </div>
 </div>
@@ -434,8 +575,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="afbe8b6927f3ee99dfe45b8392269a326" name="afbe8b6927f3ee99dfe45b8392269a326"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afbe8b6927f3ee99dfe45b8392269a326">&#9670;&#160;</a></span>render_circle()</h2>
+<a id="adefb8fe71f4ecad0c47ff4b149b8a9a2" name="adefb8fe71f4ecad0c47ff4b149b8a9a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adefb8fe71f4ecad0c47ff4b149b8a9a2">&#9670;&#160;</a></span>render_circle()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -443,7 +584,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">void R13::render_circle </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct_vec2.html">Vec2</a></td>          <td class="paramname"><span class="paramname"><em>center</em></span>, </td>
+          <td class="paramtype"><a class="el" href="struct_vec2.html">Vec2</a>&lt; float &gt;</td>          <td class="paramname"><span class="paramname"><em>center</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -464,6 +605,36 @@ Public Member Functions</h2></td></tr>
     <tr><td class="paramname">center</td><td>The position of the centre of the circle </td></tr>
     <tr><td class="paramname">radius</td><td>The radius of the circle to render </td></tr>
     <tr><td class="paramname">color</td><td>The colour to render the circle as </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a0a4db863009c33bb49ecdf47ae4234a2" name="a0a4db863009c33bb49ecdf47ae4234a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a4db863009c33bb49ecdf47ae4234a2">&#9670;&#160;</a></span>render_line()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void R13::render_line </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_line.html">Line</a></td>          <td class="paramname"><span class="paramname"><em>line</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_color.html">Color</a></td>          <td class="paramname"><span class="paramname"><em>color</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Renders a line to the current frame. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">line</td><td>The line to render </td></tr>
+    <tr><td class="paramname">color</td><td>The colour to render the line as </td></tr>
   </table>
   </dd>
 </dl>
@@ -500,8 +671,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="af2be7b9343e6e475372432f2fe1daee2" name="af2be7b9343e6e475372432f2fe1daee2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af2be7b9343e6e475372432f2fe1daee2">&#9670;&#160;</a></span>render_text()</h2>
+<a id="a21a2e0927b94c8edbd8c532b6c066b22" name="a21a2e0927b94c8edbd8c532b6c066b22"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21a2e0927b94c8edbd8c532b6c066b22">&#9670;&#160;</a></span>render_text()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -514,7 +685,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="struct_vec2.html">Vec2</a></td>          <td class="paramname"><span class="paramname"><em>pos</em></span>, </td>
+          <td class="paramtype"><a class="el" href="struct_vec2.html">Vec2</a>&lt; float &gt;</td>          <td class="paramname"><span class="paramname"><em>pos</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -565,6 +736,44 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section note"><dt>Note</dt><dd>This function copies the entire font data to a separate instance </dd></dl>
+
+</div>
+</div>
+<a id="a1e6e2d500395d66421f664f3556ac01e" name="a1e6e2d500395d66421f664f3556ac01e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e6e2d500395d66421f664f3556ac01e">&#9670;&#160;</a></span>set_key_callback()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void R13::set_key_callback </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a37429f4d0717e46e34deff60818e5022">KeyCallback</a></td>          <td class="paramname"><span class="paramname"><em>callback</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the key callback for the window, see GLFW documentation for more details on how key callbacks work. </p>
+
+</div>
+</div>
+<a id="aca126671b1e6adbeae324a6616b2f978" name="aca126671b1e6adbeae324a6616b2f978"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca126671b1e6adbeae324a6616b2f978">&#9670;&#160;</a></span>set_volume_audio()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void R13::set_volume_audio </td>
+          <td>(</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>volume</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the volume of the current audio file, from 0 to 1. </p>
 
 </div>
 </div>

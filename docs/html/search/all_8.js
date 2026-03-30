@@ -122,5 +122,6 @@ var searchData=
   ['key_5fx_119',['KEY_X',['../keys_8h.html#a832280ef5a7afeda19f32939951e8b10',1,'keys.h']]],
   ['key_5fy_120',['KEY_Y',['../keys_8h.html#ad9db04899df9fe71bb221c02721e28ac',1,'keys.h']]],
   ['key_5fz_121',['KEY_Z',['../keys_8h.html#a7c655f9f55336c6db42503e356028f4d',1,'keys.h']]],
-  ['keys_2eh_122',['keys.h',['../keys_8h.html',1,'']]]
+  ['keycallback_122',['KeyCallback',['../class_r13.html#a37429f4d0717e46e34deff60818e5022',1,'R13']]],
+  ['keys_2eh_123',['keys.h',['../keys_8h.html',1,'']]]
 ];

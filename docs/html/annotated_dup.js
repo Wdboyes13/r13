@@ -2,7 +2,7 @@ var annotated_dup =
 [
     [ "Color", "struct_color.html", "struct_color" ],
     [ "Font", "struct_font.html", "struct_font" ],
-    [ "IVec2", "struct_i_vec2.html", "struct_i_vec2" ],
+    [ "Line", "struct_line.html", "struct_line" ],
     [ "R13", "class_r13.html", "class_r13" ],
     [ "Rectangle", "struct_rectangle.html", "struct_rectangle" ],
     [ "Vec2", "struct_vec2.html", "struct_vec2" ],

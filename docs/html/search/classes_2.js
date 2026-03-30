@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['ivec2_0',['IVec2',['../struct_i_vec2.html',1,'']]]
+  ['line_0',['Line',['../struct_line.html',1,'']]]
 ];
