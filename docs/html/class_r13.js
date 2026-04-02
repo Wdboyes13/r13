@@ -20,6 +20,7 @@ var class_r13 =
     [ "render_circle", "class_r13.html#adefb8fe71f4ecad0c47ff4b149b8a9a2", null ],
     [ "render_line", "class_r13.html#a0a4db863009c33bb49ecdf47ae4234a2", null ],
     [ "render_rectangle", "class_r13.html#ad3912b7aeb9b7a8d386f99e7e6662361", null ],
+    [ "render_sprite", "class_r13.html#ad594341117d781d13f8825fb7fc795d4", null ],
     [ "render_text", "class_r13.html#a21a2e0927b94c8edbd8c532b6c066b22", null ],
     [ "set_font_text", "class_r13.html#a6dd0945460704b32b5f8150e91c64e42", null ],
     [ "set_key_callback", "class_r13.html#a1e6e2d500395d66421f664f3556ac01e", null ],

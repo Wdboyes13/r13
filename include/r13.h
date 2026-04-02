@@ -26,6 +26,7 @@ class RectRND;
 class TextRND;
 class CircleRND;
 class LineRND;
+class SpriteRND;
 class AudioPlayer;
 
 #ifdef _MSC_VER
@@ -74,6 +75,17 @@ struct API Font {
         unsigned int advance;    // horiz offset to advance to next glyph
     };
     std::map<char, Character> characters;
+};
+
+struct API Sprite {
+    Sprite(const std::string& path);
+    ~Sprite();
+
+  private:
+    friend SpriteRND;
+    unsigned char* data;
+    unsigned int texture_id;
+    int w, h, c;
 };
 
 /**
@@ -266,6 +278,15 @@ class API R13 {
     void render_line(Line line, Color color);
 
     /**
+     * @brief Renders a sprite to the current frame
+     *
+     * @param pos position of the sprite
+     * @param scale scale of the sprite
+     * @param path path to the sprite image file
+     */
+    void render_sprite(Sprite& sprite, Vec2<float> pos, Vec2<float> scale);
+
+    /**
      * @brief Loads an audio file
      * @param path The path to the audio file to load
      * @return A bool indicating whether the loading failed, or succeeded
@@ -290,6 +311,7 @@ class API R13 {
     std::unique_ptr<TextRND> text;
     std::unique_ptr<CircleRND> circle;
     std::unique_ptr<LineRND> line;
+    std::unique_ptr<SpriteRND> sprite;
     std::unique_ptr<AudioPlayer> audio;
 
     std::mt19937_64 rng;

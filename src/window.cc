@@ -16,10 +16,10 @@ void R13::begin_draw(Color c) {
 
 void R13::end_draw() {
     glfwSwapBuffers(window);
-    glfwPollEvents();
 }
 
 bool R13::should_close() {
+    glfwPollEvents();
     return glfwWindowShouldClose(window);
 }
 

@@ -50,11 +50,13 @@ void R13::init() {
     text = std::make_unique<TextRND>(font_sz);
     circle = std::make_unique<CircleRND>();
     line = std::make_unique<LineRND>();
+    sprite = std::make_unique<SpriteRND>();
 
     rect->init(this);
     text->init(this);
     circle->init(this);
     line->init(this);
+    sprite->init(this);
 
     audio = std::make_unique<AudioPlayer>();
 

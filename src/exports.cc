@@ -27,6 +27,10 @@ void R13::render_line(Line line, Color color) {
     return this->line->render(line, color);
 }
 
+void R13::render_sprite(Sprite& sprite, Vec2<float> pos, Vec2<float> scale) {
+    return this->sprite->render(sprite, pos, scale);
+}
+
 bool R13::load_file_audio(const std::string& path) {
     return audio->load_file(path);
 }

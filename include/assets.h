@@ -22,6 +22,9 @@ DECLARE_ASSET(text_vert)
 DECLARE_ASSET(line_frag)
 DECLARE_ASSET(line_vert)
 
+DECLARE_ASSET(sprite_frag)
+DECLARE_ASSET(sprite_vert)
+
 DECLARE_ASSET(vt323_ttf)
 
 #undef DECLARE_ASSET

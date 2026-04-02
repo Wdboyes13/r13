@@ -1,13 +1,7 @@
-set(_assets
-    circle.frag
-    circle.vert
-    rect.frag
-    rect.vert
-    text.frag
-    text.vert
-    line.frag
-    line.vert
-    vt323.ttf
+file(GLOB _assets RELATIVE "${CMAKE_CURRENT_SOURCE_DIR}" CONFIGURE_DEPENDS 
+    "*.frag"
+    "*.vert"
+    "*.ttf"
 )
 
 set(asset_files "")

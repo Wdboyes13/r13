@@ -151,6 +151,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:adefb8fe71f4ecad0c47ff4b149b8a9a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders a circle to the current frame.  <br /></td></tr>
 <tr class="memitem:a0a4db863009c33bb49ecdf47ae4234a2" id="r_a0a4db863009c33bb49ecdf47ae4234a2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0a4db863009c33bb49ecdf47ae4234a2">render_line</a> (<a class="el" href="struct_line.html">Line</a> line, <a class="el" href="struct_color.html">Color</a> color)</td></tr>
 <tr class="memdesc:a0a4db863009c33bb49ecdf47ae4234a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders a line to the current frame.  <br /></td></tr>
+<tr class="memitem:ad594341117d781d13f8825fb7fc795d4" id="r_ad594341117d781d13f8825fb7fc795d4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad594341117d781d13f8825fb7fc795d4">render_sprite</a> (<a class="el" href="struct_sprite.html">Sprite</a> &amp;sprite, <a class="el" href="struct_vec2.html">Vec2</a>&lt; float &gt; pos, <a class="el" href="struct_vec2.html">Vec2</a>&lt; float &gt; scale)</td></tr>
+<tr class="memdesc:ad594341117d781d13f8825fb7fc795d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders a sprite to the current frame.  <br /></td></tr>
 <tr class="memitem:aa59f4674e9d423ada3b77de50d8e9a13" id="r_aa59f4674e9d423ada3b77de50d8e9a13"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa59f4674e9d423ada3b77de50d8e9a13">load_file_audio</a> (const std::string &amp;path)</td></tr>
 <tr class="memdesc:aa59f4674e9d423ada3b77de50d8e9a13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads an audio file.  <br /></td></tr>
 <tr class="memitem:a570d3d3e84b8be3abf7085b31f952d1c" id="r_a570d3d3e84b8be3abf7085b31f952d1c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a570d3d3e84b8be3abf7085b31f952d1c">play_audio</a> ()</td></tr>
@@ -677,6 +679,42 @@ Public Member Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">rect</td><td>The <a class="el" href="struct_rectangle.html">Rectangle</a> to render </td></tr>
     <tr><td class="paramname">color</td><td>The colour of the rectangle to render </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ad594341117d781d13f8825fb7fc795d4" name="ad594341117d781d13f8825fb7fc795d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad594341117d781d13f8825fb7fc795d4">&#9670;&#160;</a></span>render_sprite()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void R13::render_sprite </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_sprite.html">Sprite</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>sprite</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_vec2.html">Vec2</a>&lt; float &gt;</td>          <td class="paramname"><span class="paramname"><em>pos</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_vec2.html">Vec2</a>&lt; float &gt;</td>          <td class="paramname"><span class="paramname"><em>scale</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Renders a sprite to the current frame. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pos</td><td>position of the sprite </td></tr>
+    <tr><td class="paramname">scale</td><td>scale of the sprite </td></tr>
+    <tr><td class="paramname">path</td><td>path to the sprite image file </td></tr>
   </table>
   </dd>
 </dl>

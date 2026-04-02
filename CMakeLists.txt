@@ -13,6 +13,16 @@ set(CMAKE_CXX_STANDARD_REQUIRED YES)
 include(FindPython3)
 list(APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake)
 
+if (CMAKE_BUILD_TYPE STREQUAL "Debug")
+    add_compile_options(
+        "-g"
+        "-O0"
+        "-fsanitize=address"
+    )
+
+    add_link_options("-fsanitize=address")
+endif()
+
 set(LIB_LINKS "")
 set(bindump ${CMAKE_SOURCE_DIR}/scripts/bindump.py)
 

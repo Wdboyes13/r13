@@ -67,6 +67,8 @@ void \mbox{\hyperlink{class_r13_adefb8fe71f4ecad0c47ff4b149b8a9a2}{render\+\_\+c
 \begin{DoxyCompactList}\small\item\em Renders a circle to the current frame. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_r13_a0a4db863009c33bb49ecdf47ae4234a2}{render\+\_\+line}} (\mbox{\hyperlink{struct_line}{Line}} line, \mbox{\hyperlink{struct_color}{Color}} color)
 \begin{DoxyCompactList}\small\item\em Renders a line to the current frame. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_r13_ad594341117d781d13f8825fb7fc795d4}{render\+\_\+sprite}} (\mbox{\hyperlink{struct_sprite}{Sprite}} \&sprite, \mbox{\hyperlink{struct_vec2}{Vec2}}$<$ float $>$ pos, \mbox{\hyperlink{struct_vec2}{Vec2}}$<$ float $>$ scale)
+\begin{DoxyCompactList}\small\item\em Renders a sprite to the current frame. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_r13_aa59f4674e9d423ada3b77de50d8e9a13}{load\+\_\+file\+\_\+audio}} (const std\+::string \&path)
 \begin{DoxyCompactList}\small\item\em Loads an audio file. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_r13_a570d3d3e84b8be3abf7085b31f952d1c}{play\+\_\+audio}} ()
@@ -398,6 +400,25 @@ Renders a rectangle to the current frame.
 {\em rect} & The \doxylink{struct_rectangle}{Rectangle} to render \\
 \hline
 {\em color} & The colour of the rectangle to render \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_r13_ad594341117d781d13f8825fb7fc795d4}\index{R13@{R13}!render\_sprite@{render\_sprite}}
+\index{render\_sprite@{render\_sprite}!R13@{R13}}
+\doxysubsubsection{\texorpdfstring{render\_sprite()}{render\_sprite()}}
+{\footnotesize\ttfamily \label{class_r13_ad594341117d781d13f8825fb7fc795d4} 
+void R13\+::render\+\_\+sprite (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_sprite}{Sprite}} \&}]{sprite}{, }\item[{\mbox{\hyperlink{struct_vec2}{Vec2}}$<$ float $>$}]{pos}{, }\item[{\mbox{\hyperlink{struct_vec2}{Vec2}}$<$ float $>$}]{scale}{}\end{DoxyParamCaption})}
+
+
+
+Renders a sprite to the current frame. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & position of the sprite \\
+\hline
+{\em scale} & scale of the sprite \\
+\hline
+{\em path} & path to the sprite image file \\
 \hline
 \end{DoxyParams}
 \Hypertarget{class_r13_a21a2e0927b94c8edbd8c532b6c066b22}\index{R13@{R13}!render\_text@{render\_text}}

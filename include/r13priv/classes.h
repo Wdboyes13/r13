@@ -10,6 +10,7 @@
 #include "structs.h"
 
 class R13;
+struct Sprite;
 struct Font;
 
 class Shader {
@@ -77,6 +78,16 @@ class LineRND : public Renderer {
     void init(R13* _prend) override;
     void render(Line line, Color color);
     ~LineRND() override;
+};
+
+class SpriteRND : public Renderer {
+  public:
+    void init(R13* _prend) override;
+    void render(Sprite& sprite, Vec2<float> pos, Vec2<float> scale);
+    ~SpriteRND() override;
+
+  private:
+    unsigned int ebo;
 };
 
 class AudioPlayer {
