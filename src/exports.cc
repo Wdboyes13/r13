@@ -31,6 +31,10 @@ void R13::render_sprite(Sprite& sprite, Vec2<float> pos, Vec2<float> scale) {
     return this->sprite->render(sprite, pos, scale);
 }
 
+void R13::render_polygon(int n_vertices, float radius, Vec2<float> pos, Color color) {
+    this->polygon->render(n_vertices, radius, pos, color);
+}
+
 bool R13::load_file_audio(const std::string& path) {
     return audio->load_file(path);
 }

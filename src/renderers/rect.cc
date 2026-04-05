@@ -1,6 +1,5 @@
 #define R13_PRIVATE_ACCESS
 
-#include <assets.h>
 #include <r13.h>
 #include <r13priv/classes.h>
 
@@ -15,11 +14,7 @@ void RectRND::init(R13* _prend) {
 
     auto dimensions = prend->get_dimensions();
 
-    shader = std::make_unique<Shader>(
-        rect_vert,
-        rect_vert_len,
-        rect_frag,
-        rect_frag_len);
+    shader = std::make_unique<Shader>();
 
     glm::mat4 projection = glm::ortho(0.0f, (float)dimensions.x, (float)dimensions.y, 0.0f);
     shader->use();

@@ -7,6 +7,7 @@
 #include <memory>
 #include <queue>
 #include <string>
+#include <assets.h>
 #include "structs.h"
 
 class R13;
@@ -15,21 +16,27 @@ struct Font;
 
 class Shader {
   private:
-    unsigned int compile_shader(const char* source, unsigned int type);
+    static unsigned int compile_shader(const char* source, unsigned int type);
 
-    std::string data_to_string(unsigned char* data, size_t len);
+    static std::string data_to_string(const unsigned char* data, size_t len);
 
   public:
     unsigned int id;
-    Shader(unsigned char* vert_data, size_t vert_data_len, unsigned char* frag_data, size_t frag_data_len);
+
+    explicit Shader(
+      unsigned char* vert_data = default_vert,
+      size_t vert_data_len = default_vert_len,
+      unsigned char* frag_data = default_frag,
+      size_t frag_data_len = default_frag_len
+      );
 
     ~Shader();
 
-    void use();
-    void set_vec2(const char* name, Vec2<float> v);
-    void set_vec3(const char* name, Vec3<float> v);
-    void set_vec4(const char* name, Vec4<float> v);
-    void set_float(const char* name, float v);
+    void use() const;
+    void set_vec2(const char* name, Vec2<float> v) const;
+    void set_vec3(const char* name, Vec3<float> v) const;
+    void set_vec4(const char* name, Vec4<float> v) const;
+    void set_float(const char* name, float v) const;
 };
 
 class Renderer {
@@ -78,6 +85,13 @@ class LineRND : public Renderer {
     void init(R13* _prend) override;
     void render(Line line, Color color);
     ~LineRND() override;
+};
+
+class PolyRND : public Renderer {
+public:
+  void init(R13* _prend) override;
+  void render(int nv, float radius, Vec2<float> pos, Color color);
+  ~PolyRND() override;
 };
 
 class SpriteRND : public Renderer {

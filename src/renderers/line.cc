@@ -12,11 +12,7 @@ void LineRND::init(R13* _prend) {
     prend = _prend;
     auto dimensions = prend->get_dimensions();
 
-    shader = std::make_unique<Shader>(
-        line_vert,
-        line_vert_len,
-        line_frag,
-        line_frag_len);
+    shader = std::make_unique<Shader>();
 
     glm::mat4 projection = glm::ortho(0.0f, (float)dimensions.x, (float)dimensions.y, 0.0f);
     shader->use();

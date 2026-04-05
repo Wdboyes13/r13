@@ -4,8 +4,8 @@
 #include <random>
 
 uint64_t R13::get_delta_time() {
-    uint64_t current_time = glfwGetTime() * 1000; // Convert to milliseconds
-    uint64_t delta_time = current_time - frame_times.back();
+    const uint64_t current_time = glfwGetTime() * 1000;
+    const uint64_t delta_time = current_time - frame_times.back();
     frame_times.push_back(current_time);
     return delta_time;
 }
@@ -27,10 +27,7 @@ int R13::get_fps() {
         return 0;
     }
 
-    uint64_t current_time = glfwGetTime() * 1000; // Convert to milliseconds
-    uint64_t delta_time = current_time - frame_times.front();
-
-    // Remove old frame times
+    const uint64_t current_time = glfwGetTime() * 1000;
     while (!frame_times.empty() && current_time - frame_times.front() > 1000) {
         frame_times.erase(frame_times.begin());
     }

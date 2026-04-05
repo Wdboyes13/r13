@@ -27,6 +27,7 @@ class TextRND;
 class CircleRND;
 class LineRND;
 class SpriteRND;
+class PolyRND;
 class AudioPlayer;
 
 #ifdef _MSC_VER
@@ -287,6 +288,15 @@ class API R13 {
     void render_sprite(Sprite& sprite, Vec2<float> pos, Vec2<float> scale);
 
     /**
+     * @breif Renders a polygon to the current from
+     * @param n_vertices number of vertices for the polygon
+     * @param radius radius of the polygon
+     * @param pos position of the polygon
+     * @param color colour of the polygon
+     */
+    void render_polygon(int n_vertices, float radius, Vec2<float> pos, Color color);
+
+    /**
      * @brief Loads an audio file
      * @param path The path to the audio file to load
      * @return A bool indicating whether the loading failed, or succeeded
@@ -313,6 +323,7 @@ class API R13 {
     std::unique_ptr<LineRND> line;
     std::unique_ptr<SpriteRND> sprite;
     std::unique_ptr<AudioPlayer> audio;
+    std::unique_ptr<PolyRND> polygon;
 
     std::mt19937_64 rng;
 

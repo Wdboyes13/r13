@@ -8,12 +8,12 @@
 #include <stdexcept>
 #include <string>
 
-std::string Shader::data_to_string(unsigned char* data, size_t len) {
-    return std::string(reinterpret_cast<const char*>(data), len);
+std::string Shader::data_to_string(const unsigned char* data, size_t len) {
+    return {reinterpret_cast<const char*>(data), len};
 }
 
-GLuint Shader::compile_shader(const char* source, unsigned int type) {
-    GLuint shader = glCreateShader(type);
+GLuint Shader::compile_shader(const char* source, const unsigned int type) {
+    const auto shader = glCreateShader(type);
     glShaderSource(shader, 1, &source, nullptr);
     glCompileShader(shader);
 
@@ -28,8 +28,8 @@ GLuint Shader::compile_shader(const char* source, unsigned int type) {
 }
 
 Shader::Shader(unsigned char* vert_data, size_t vert_data_len, unsigned char* frag_data, size_t frag_data_len) {
-    auto frag = compile_shader(data_to_string(frag_data, frag_data_len).c_str(), GL_FRAGMENT_SHADER);
-    auto vert = compile_shader(data_to_string(vert_data, vert_data_len).c_str(), GL_VERTEX_SHADER);
+    const auto frag = compile_shader(data_to_string(frag_data, frag_data_len).c_str(), GL_FRAGMENT_SHADER);
+    const auto vert = compile_shader(data_to_string(vert_data, vert_data_len).c_str(), GL_VERTEX_SHADER);
 
     id = glCreateProgram();
     glAttachShader(id, frag);
@@ -54,19 +54,19 @@ Shader::~Shader() {
     }
 }
 
-void Shader::use() { glUseProgram(id); }
+void Shader::use() const { glUseProgram(id); }
 
-void Shader::set_vec2(const char* name, Vec2<float> v) {
+void Shader::set_vec2(const char* name, Vec2<float> v) const {
     glUniform2f(glGetUniformLocation(id, name), v.x, v.y);
 }
-void Shader::set_vec3(const char* name, Vec3<float> v) {
+void Shader::set_vec3(const char* name, Vec3<float> v) const {
     glUniform3f(glGetUniformLocation(id, name), v.x, v.y, v.z);
 }
 
-void Shader::set_vec4(const char* name, Vec4<float> v) {
+void Shader::set_vec4(const char* name, Vec4<float> v) const {
     glUniform4f(glGetUniformLocation(id, name), v.x, v.y, v.z, v.w);
 }
 
-void Shader::set_float(const char* name, float v) {
+void Shader::set_float(const char* name, float v) const {
     glUniform1f(glGetUniformLocation(id, name), v);
 }

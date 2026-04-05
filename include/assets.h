@@ -10,20 +10,14 @@
     extern uint8_t BUILD_ID[];  \
     extern size_t BUILD_ID##_len;
 
-DECLARE_ASSET(circle_frag)
-DECLARE_ASSET(circle_vert)
+#define DECLARE_SHADER(SHADER_ID) \
+    DECLARE_ASSET(SHADER_ID##_frag) \
+    DECLARE_ASSET(SHADER_ID##_vert)
 
-DECLARE_ASSET(rect_frag)
-DECLARE_ASSET(rect_vert)
-
-DECLARE_ASSET(text_frag)
-DECLARE_ASSET(text_vert)
-
-DECLARE_ASSET(line_frag)
-DECLARE_ASSET(line_vert)
-
-DECLARE_ASSET(sprite_frag)
-DECLARE_ASSET(sprite_vert)
+DECLARE_SHADER(circle)
+DECLARE_SHADER(default)
+DECLARE_SHADER(sprite)
+DECLARE_SHADER(text)
 
 DECLARE_ASSET(vt323_ttf)
 

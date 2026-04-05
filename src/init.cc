@@ -7,8 +7,8 @@
 #include <GLFW/glfw3.h>
 #include <stdexcept>
 
-R13::R13(int width, int height, int font_sz)
-    : width(width), height(height), font_sz(font_sz) { this->init(); }
+R13::R13(const int width, const int height, const int font_size)
+    : font_sz(font_size), width(width), height(height) { this->init(); }
 
 R13::~R13() {
     glfwTerminate();
@@ -51,12 +51,14 @@ void R13::init() {
     circle = std::make_unique<CircleRND>();
     line = std::make_unique<LineRND>();
     sprite = std::make_unique<SpriteRND>();
+    polygon = std::make_unique<PolyRND>();
 
     rect->init(this);
     text->init(this);
     circle->init(this);
     line->init(this);
     sprite->init(this);
+    polygon->init(this);
 
     audio = std::make_unique<AudioPlayer>();
 
