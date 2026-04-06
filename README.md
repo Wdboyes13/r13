@@ -1,4 +1,4 @@
-# R13  
+# R13 ![r13 logo](/logo/SVG/r13_logo.svg)  
 A simple game library made with OpenGL  
 
 ## Building  
